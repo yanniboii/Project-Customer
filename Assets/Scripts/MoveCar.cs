@@ -60,7 +60,7 @@ public class MoveCar : MonoBehaviour
     void Update()
     {
         
-        if(Input.GetKey(KeyCode.S))
+        if(Input.GetKey(KeyCode.Space))
         {
         }
         if(Input.GetKey(KeyCode.D))
