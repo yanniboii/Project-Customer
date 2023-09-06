@@ -40,10 +40,10 @@ public class MoveCar : MonoBehaviour
         frontLeft.steerAngle = currentTurnAngle;
         frontRight.steerAngle = currentTurnAngle;
 
-        //UpdateWheel(frontLeft, frontLeftTransform);
-        //UpdateWheel(backLeft, backLeftTransform);
-        //UpdateWheel(backRight, backRightTransform);
-        //UpdateWheel(frontRight, frontRightTransform);
+        UpdateWheel(frontLeft, frontLeftTransform);
+        UpdateWheel(backLeft, backLeftTransform);
+        UpdateWheel(backRight, backRightTransform);
+        UpdateWheel(frontRight, frontRightTransform);
     }
 
     void UpdateWheel(WheelCollider col, Transform transform)
