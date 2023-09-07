@@ -298,14 +298,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.34776503, y: -0, z: -0, w: 0.9375818}
+  m_LocalPosition: {x: 0, y: 2, z: 0.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 40.701, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,6 +503,69 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
+=======
+--- !u!1 &1088158170 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1940cd9a634d5fb42900101d170e1a90,
+    type: 3}
+  m_PrefabInstance: {fileID: 223456861}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1088158171 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 1940cd9a634d5fb42900101d170e1a90,
+    type: 3}
+  m_PrefabInstance: {fileID: 223456861}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1088158174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088158170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72b31602f0d72674496217c9885d803e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  growMeshes:
+  - {fileID: 1088158171}
+  timeToGrow: 5
+  refreshRate: 0.05
+  minGrow: 0.381
+  maxGrow: 1
+--- !u!1 &1912089334 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9a1ff2f404b95e44d9cc0fcff5b0221f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2089089073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1912089335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912089334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72b31602f0d72674496217c9885d803e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  growMeshes:
+  - {fileID: 1912089336}
+  timeToGrow: 5
+  refreshRate: 0.05
+  minGrow: 0.102
+  maxGrow: 1
+--- !u!23 &1912089336 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 9a1ff2f404b95e44d9cc0fcff5b0221f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2089089073}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!1 &1930958659
 GameObject:
   m_ObjectHideFlags: 0
