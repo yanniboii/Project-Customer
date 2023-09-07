@@ -13,15 +13,21 @@ public class Boids : MonoBehaviour
 
     public GameObject boidPrefab;
 
-    public List<GameObject> boids;
+    public List<Boid> boids;
+
+    private
     // Start is called before the first frame update
     void Start()
     {
         for(int i = 0; i < boidAmount; i++)
         {
-            GameObject boid = Instantiate(boidPrefab);
-            boid.AddComponent<Rigidbody>();
+            Boid boid = new Boid(Instantiate(boidPrefab), boids, boidRange);
+            boid.boidPrefab.AddComponent<Rigidbody>();
             boids.Add(boid);
+            if(i == boidAmount)
+            {
+
+            }
         }
     }
 
@@ -32,18 +38,20 @@ public class Boids : MonoBehaviour
         {
             for (int i = 0; i < boids.Count; i++)
             {
-                boids[i].GetComponent<Rigidbody>().AddForce(new Vector3(0, 0, 1));
+                boids[i].boidPrefab.GetComponent<Rigidbody>().AddForce(new Vector3(0, 0, 1));
             }
         }
 
     }
+
+
 
     void Separtion(GameObject boid)
     {
         Physics.CheckSphere(boid.transform.position, boidRange);
         for(int i = 0; i < boids.Count;i++)
         {
-            if (Vector3.Distance(boid.transform.position, boids[i].transform.position) < boidRange)
+            if (Vector3.Distance(boid.transform.position, boids[i].boidPrefab.transform.position) < boidRange)
             {
 
             }
@@ -64,9 +72,39 @@ public class Boids : MonoBehaviour
 public class Boid
 {
     public GameObject boidPrefab;
-    public Boid(GameObject boidPrefab)
+
+    public List<Boid> friends;
+
+    private List<Boid> boids;
+
+    private float boidRange;
+
+    public Boid(GameObject boidPrefab, List<Boid> boids, float boidRange)
     {
         this.boidPrefab = boidPrefab;
+        this.boids = boids;
+        this.boidRange = boidRange;
+
+        friends = new List<Boid>();
+    }
+
+    void GetNearbyBoids()
+    {
+        List<Boid> nearby = new List<Boid>();
+
+        for (int i = 0; i < boids.Count; i++)
+        {
+            Boid test = boids[i];
+            if (test == this)
+            {
+                return;
+            }
+            if (Vector3.Distance(test.boidPrefab.transform.position, boids[i].boidPrefab.transform.position) < boidRange)
+            {
+                nearby.Add(test);
+            }
+        }
+
     }
 
 }
