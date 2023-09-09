@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Boid : MonoBehaviour
 {
     public GameObject boidPrefab;
 
     public List<Transform> friends;
+
+    public List<Transform> avoids;
 
     public float boidSpeed;
 
@@ -17,6 +20,10 @@ public class Boid : MonoBehaviour
     public float alignmentWheight;
 
     public float cohesionWeight;
+
+    public float avoidWeight;
+
+    public float minSpeed;
 
     public Boid(GameObject boidPrefab, float boidRange, float boidSpeed)
     {
@@ -51,11 +58,36 @@ public class Boid : MonoBehaviour
                 {
                     friends.Add(friendBoid.transform);
                 }
+                if(collider.tag == "Avoid")
+                {
+                    avoids.Add(collider.transform);
+                }
             }
         }
     }
 
+    public Vector3 CalculateAvoidDirection()
+    {
+        Vector3 avoiddir = Vector3.zero;
 
+        foreach(Transform avoid in avoids)
+        {
+            if(avoid != transform)
+            {
+                Vector3 offset = avoid.transform.position - boidPrefab.transform.position;
+                float distance = offset.magnitude;
+
+                // Check if the friend is too close
+                if (distance < boidRange)
+                {
+                    // Calculate a separation force based on the distance
+                    float separationFactor = 1.0f - (distance / boidRange);
+                    avoiddir += -offset.normalized * separationFactor;
+                }
+            }
+        }
+        return avoiddir;
+    }
 
     public Vector3 CalculateSeparationDirection()
     {
@@ -147,14 +179,26 @@ public class Boid : MonoBehaviour
         Vector3 alignementDirection = CalculateAlignmentDirection();
         Vector3 separationDirection = CalculateSeparationDirection();
         Vector3 cohesionDirection = CalculateCohesionDirection();
+        Vector3 avoidDirection = CalculateAvoidDirection();
 
+        avoidDirection.Normalize();
         alignementDirection.Normalize();
         separationDirection.Normalize();
         cohesionDirection.Normalize();
 
-        Vector3 flockingDirection = alignementDirection * alignmentWheight + separationDirection * separationWeight + cohesionDirection * cohesionWeight;
+        Vector3 flockingDirection = alignementDirection * alignmentWheight + 
+            separationDirection * separationWeight + 
+            cohesionDirection * cohesionWeight +
+            avoidDirection * avoidWeight;
 
-        return flockingDirection.normalized;
+        flockingDirection.Normalize();
+
+        if(flockingDirection.magnitude < minSpeed)
+        {
+            flockingDirection = flockingDirection.normalized * minSpeed;
+        }
+
+        return flockingDirection;
     }
 
 

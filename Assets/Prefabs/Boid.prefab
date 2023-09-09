@@ -50,11 +50,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boidPrefab: {fileID: 5762183636519925906}
   friends: []
+  avoids: []
   boidSpeed: 3
-  boidRange: 20
+  boidRange: 5.44
   separationWeight: 27.32
   alignmentWheight: 27.81
   cohesionWeight: 23.77
+  avoidWeight: 73
+  minSpeed: 1
 --- !u!54 &4401356871844776425
 Rigidbody:
   m_ObjectHideFlags: 0
