@@ -15,6 +15,14 @@ public class Boid : MonoBehaviour
 
     public float boidRange;
 
+    public float separationRange;
+
+    public float alignmentRange;
+
+    public float cohesionRange;
+
+    public float avoidRange;
+
     public float separationWeight;
 
     public float alignmentWheight;
@@ -78,10 +86,10 @@ public class Boid : MonoBehaviour
                 float distance = offset.magnitude;
 
                 // Check if the friend is too close
-                if (distance < boidRange)
+                if (distance < avoidRange)
                 {
                     // Calculate a separation force based on the distance
-                    float separationFactor = 1.0f - (distance / boidRange);
+                    float separationFactor = 1.0f - (distance / avoidRange);
                     avoiddir += -offset.normalized * separationFactor;
                 }
             }
@@ -101,10 +109,10 @@ public class Boid : MonoBehaviour
                 float distance = offset.magnitude;
 
                 // Check if the friend is too close
-                if (distance < boidRange)
+                if (distance < separationRange)
                 {
                     // Calculate a separation force based on the distance
-                    float separationFactor = 1.0f - (distance / boidRange);
+                    float separationFactor = 1.0f - (distance / separationRange);
                     separation += -offset.normalized * separationFactor;
                 }
             }
@@ -125,7 +133,7 @@ public class Boid : MonoBehaviour
                 float distance = offset.magnitude;
 
                 // Check if the friend is within alignment range
-                if (distance < boidRange)
+                if (distance < alignmentRange)
                 {
                     // Add the friend's velocity to the alignment vector
                     Boid friendBoid = friend.GetComponent<Boid>();
@@ -152,7 +160,7 @@ public class Boid : MonoBehaviour
                 float distance = offset.magnitude;
 
                 // Check if the friend is within cohesion range
-                if (distance < boidRange)
+                if (distance < cohesionRange)
                 {
                     centerOfMass += friend.position;
                     count++;
