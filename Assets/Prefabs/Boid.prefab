@@ -52,9 +52,9 @@ MonoBehaviour:
   friends: []
   boidSpeed: 3
   boidRange: 20
-  separationWeight: 10
-  alignmentWheight: 13.5
-  cohesionWeight: 13.95
+  separationWeight: 27.32
+  alignmentWheight: 27.81
+  cohesionWeight: 23.77
 --- !u!54 &4401356871844776425
 Rigidbody:
   m_ObjectHideFlags: 0
