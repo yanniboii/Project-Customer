@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 100800024}
   - component: {fileID: 100800023}
   - component: {fileID: 100800022}
+  - component: {fileID: 100800025}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -207,6 +208,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &100800025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100800021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &276885103
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +388,7 @@ MonoBehaviour:
   boidAmount: 5
   boidSpeed: 10.93
   boidRange: 48.88
-  boidPrefab: {fileID: 919132149155446097, guid: 9a1ff2f404b95e44d9cc0fcff5b0221f,
+  boidPrefab: {fileID: 5762183636519925906, guid: b5fc82164368a7b4e93cf32f6f8de5ee,
     type: 3}
   boids: []
 --- !u!4 &583720942
