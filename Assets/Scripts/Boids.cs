@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class Boids : MonoBehaviour
 {
-
     public int boidAmount;
+
+    public float spawnRange;
 
     public GameObject boidPrefab;
 
-    private bool done;
     // Start is called before the first frame update
     void Start()
     {
         for (int i = 0; i < boidAmount; i++)
         {
-            Vector3 pos = new Vector3(Random.Range(0, 50f), Random.Range(0, 50f), Random.Range(0, 50f));
+            Vector3 pos = new Vector3(Random.Range(-spawnRange, spawnRange), Random.Range(-spawnRange, spawnRange), Random.Range(-spawnRange, spawnRange));
             GameObject boid = Instantiate(boidPrefab, pos, Quaternion.identity);
         }
     }

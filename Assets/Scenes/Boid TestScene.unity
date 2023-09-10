@@ -385,7 +385,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dacf66d2e82f134cb55daef167d929e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boidAmount: 1002
+  boidAmount: 461
+  spawnRange: 6.82
   boidPrefab: {fileID: 5762183636519925906, guid: b5fc82164368a7b4e93cf32f6f8de5ee,
     type: 3}
 --- !u!4 &583720942
@@ -484,6 +485,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Planes
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087889529795052303, guid: b7c02de5e96acab459d0c14add2d3eb7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7c02de5e96acab459d0c14add2d3eb7, type: 3}

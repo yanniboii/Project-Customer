@@ -52,17 +52,19 @@ MonoBehaviour:
   boidPrefab: {fileID: 5762183636519925906}
   friends: []
   avoids: []
-  boidSpeed: 64.09
+  boidSpeed: 34.75
   boidRange: 5.44
   separationRange: 1.72
   alignmentRange: 21.47
   cohesionRange: 23.8
-  avoidRange: 43.57
+  avoidRange: 79
   separationWeight: 151.18
   alignmentWheight: 27.81
   cohesionWeight: 23.77
-  avoidWeight: 288.49
+  avoidWeight: 5e+20
   minSpeed: 1
+  defaultSpeed: 20
+  rotationSpeed: 0.1
 --- !u!54 &4401356871844776425
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -150,7 +152,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5762183636519925906}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72b31602f0d72674496217c9885d803e, type: 3}
   m_Name: 

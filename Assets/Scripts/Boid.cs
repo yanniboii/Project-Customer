@@ -33,6 +33,10 @@ public class Boid : MonoBehaviour
 
     public float minSpeed;
 
+    public float defaultSpeed;
+
+    public float rotationSpeed;
+
     public Boid(GameObject boidPrefab, float boidRange, float boidSpeed)
     {
         this.boidPrefab = boidPrefab;
@@ -46,7 +50,12 @@ public class Boid : MonoBehaviour
     {
         DetectFriends();
         Vector3 flockingDirection = CalcutlateFlockingDirection();
-        boidPrefab.GetComponent<Rigidbody>().velocity = flockingDirection * boidSpeed;
+
+        Quaternion targetRotation = Quaternion.LookRotation(flockingDirection);
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed);
+
+        boidPrefab.GetComponent<Rigidbody>().velocity = transform.forward * defaultSpeed;
     }
 
 
@@ -66,7 +75,7 @@ public class Boid : MonoBehaviour
                 {
                     friends.Add(friendBoid.transform);
                 }
-                if(collider.tag == "Avoid")
+                if (collider.tag == "Avoid")
                 {
                     avoids.Add(collider.transform);
                 }
@@ -78,9 +87,9 @@ public class Boid : MonoBehaviour
     {
         Vector3 avoiddir = Vector3.zero;
 
-        foreach(Transform avoid in avoids)
+        foreach (Transform avoid in avoids)
         {
-            if(avoid != transform)
+            if (avoid != transform)
             {
                 Vector3 offset = avoid.transform.position - boidPrefab.transform.position;
                 float distance = offset.magnitude;
@@ -89,8 +98,7 @@ public class Boid : MonoBehaviour
                 if (distance < avoidRange)
                 {
                     // Calculate a separation force based on the distance
-                    float separationFactor = 1.0f - (distance / avoidRange);
-                    avoiddir += -offset.normalized * separationFactor;
+                    avoiddir += -offset.normalized * avoidWeight;
                 }
             }
         }
@@ -194,17 +202,18 @@ public class Boid : MonoBehaviour
         separationDirection.Normalize();
         cohesionDirection.Normalize();
 
-        Vector3 flockingDirection = alignementDirection * alignmentWheight + 
-            separationDirection * separationWeight + 
+        Vector3 flockingDirection =
+            alignementDirection * alignmentWheight +
+            separationDirection * separationWeight +
             cohesionDirection * cohesionWeight +
             avoidDirection * avoidWeight;
 
         flockingDirection.Normalize();
 
-        if(flockingDirection.magnitude < minSpeed)
-        {
-            flockingDirection = flockingDirection.normalized * minSpeed;
-        }
+        //if (flockingDirection.magnitude < minSpeed)
+        //{
+        //    flockingDirection = transform.forward * defaultSpeed;
+        //}
 
         return flockingDirection;
     }
