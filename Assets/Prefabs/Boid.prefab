@@ -55,8 +55,8 @@ MonoBehaviour:
   boidSpeed: 34.75
   boidRange: 5.44
   separationRange: 1.72
-  alignmentRange: 19.25
-  cohesionRange: 21.6
+  alignmentRange: 173.5
+  cohesionRange: 175.8
   avoidRange: 97.33
   raycastDistance: 28.01
   separationWeight: 151.18

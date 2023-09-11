@@ -11,8 +11,6 @@ public class Boid : MonoBehaviour
 
     public List<Transform> avoids;
 
-    public float boidSpeed;
-
     public float boidRange;
 
     public float separationRange;
@@ -21,11 +19,9 @@ public class Boid : MonoBehaviour
 
     public float cohesionRange;
 
-    public float avoidRange;
-
     public float raycastDistance;
 
-    public float separationWeight;
+    public float separationWeight;--
 
     public float alignmentWheight;
 
@@ -33,19 +29,16 @@ public class Boid : MonoBehaviour
 
     public float avoidWeight;
 
-    public float minSpeed;
-
     public float defaultSpeed;
 
     public float rotationSpeed;
 
-    public Boid(GameObject boidPrefab, float boidRange, float boidSpeed)
+    public Boid(GameObject boidPrefab, float boidRange)
     {
         this.boidPrefab = boidPrefab;
         this.boidRange = boidRange;
 
         friends = new List<Transform>();
-        this.boidSpeed = boidSpeed;
     }
 
     private void Update()
