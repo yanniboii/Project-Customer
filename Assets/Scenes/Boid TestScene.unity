@@ -386,7 +386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boidAmount: 1545
-  spawnRange: 633.36
+  spawnRange: 153.41
   boidPrefab: {fileID: 5762183636519925906, guid: b5fc82164368a7b4e93cf32f6f8de5ee,
     type: 3}
 --- !u!4 &583720942
