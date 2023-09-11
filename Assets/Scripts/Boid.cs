@@ -23,6 +23,8 @@ public class Boid : MonoBehaviour
 
     public float avoidRange;
 
+    public float raycastDistance;
+
     public float separationWeight;
 
     public float alignmentWheight;
@@ -83,26 +85,44 @@ public class Boid : MonoBehaviour
         }
     }
 
-    public Vector3 CalculateAvoidDirection()
+    //public Vector3 CalculateAvoidDirection()
+    //{
+    //    Vector3 avoiddir = Vector3.zero;
+
+    //    foreach (Transform avoid in avoids)
+    //    {
+    //        if (avoid != transform)
+    //        {
+    //            Vector3 offset = avoid.transform.position - boidPrefab.transform.position;
+    //            float distance = offset.magnitude;
+
+    //            // Check if the friend is too close
+    //            if (distance < avoidRange)
+    //            {
+    //                // Calculate a separation force based on the distance
+    //                avoiddir += -offset.normalized * avoidWeight;
+    //            }
+    //        }
+    //    }
+    //    return avoiddir;
+    //}
+
+    private Vector3 CalculateAvoidanceDirection()
     {
-        Vector3 avoiddir = Vector3.zero;
+        Vector3 avoidanceDirection = Vector3.zero;
 
-        foreach (Transform avoid in avoids)
+        for (int i = -1; i <= 1; i++)
         {
-            if (avoid != transform)
+            Vector3 rayDirection = transform.forward + transform.right * i;
+            Ray ray = new Ray(transform.position, rayDirection);
+            Debug.DrawRay(transform.position, rayDirection);
+            if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance))
             {
-                Vector3 offset = avoid.transform.position - boidPrefab.transform.position;
-                float distance = offset.magnitude;
-
-                // Check if the friend is too close
-                if (distance < avoidRange)
-                {
-                    // Calculate a separation force based on the distance
-                    avoiddir += -offset.normalized * avoidWeight;
-                }
+                avoidanceDirection += hit.normal * avoidWeight;
             }
         }
-        return avoiddir;
+
+        return avoidanceDirection;
     }
 
     public Vector3 CalculateSeparationDirection()
@@ -195,9 +215,9 @@ public class Boid : MonoBehaviour
         Vector3 alignementDirection = CalculateAlignmentDirection();
         Vector3 separationDirection = CalculateSeparationDirection();
         Vector3 cohesionDirection = CalculateCohesionDirection();
-        Vector3 avoidDirection = CalculateAvoidDirection();
+        //Vector3 avoidDirection = CalculateAvoidanceDirection();
 
-        avoidDirection.Normalize();
+        //avoidDirection.Normalize();
         alignementDirection.Normalize();
         separationDirection.Normalize();
         cohesionDirection.Normalize();
@@ -205,8 +225,10 @@ public class Boid : MonoBehaviour
         Vector3 flockingDirection =
             alignementDirection * alignmentWheight +
             separationDirection * separationWeight +
-            cohesionDirection * cohesionWeight +
-            avoidDirection * avoidWeight;
+            cohesionDirection * cohesionWeight;
+        //avoidDirection * avoidWeight;
+
+        flockingDirection += CalculateAvoidanceDirection();
 
         flockingDirection.Normalize();
 

@@ -55,15 +55,16 @@ MonoBehaviour:
   boidSpeed: 34.75
   boidRange: 5.44
   separationRange: 1.72
-  alignmentRange: 21.47
-  cohesionRange: 23.8
-  avoidRange: 79
+  alignmentRange: 36.17
+  cohesionRange: 21.6
+  avoidRange: 97.33
+  raycastDistance: 28.01
   separationWeight: 151.18
   alignmentWheight: 27.81
   cohesionWeight: 23.77
   avoidWeight: 5e+20
   minSpeed: 1
-  defaultSpeed: 20
+  defaultSpeed: 24.96
   rotationSpeed: 0.1
 --- !u!54 &4401356871844776425
 Rigidbody:
