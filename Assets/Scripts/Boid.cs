@@ -54,7 +54,15 @@ public class Boid : MonoBehaviour
 
         boidPrefab.GetComponent<Rigidbody>().velocity = transform.forward * defaultSpeed;
     }
-
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(boidPrefab.transform.position, cohesionRange);
+        Gizmos.color = Color.black;
+        Gizmos.DrawWireSphere(boidPrefab.transform.position, alignmentRange);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(boidPrefab.transform.position, separationRange);
+    }
 
     private void DetectFriends()
     {

@@ -52,18 +52,15 @@ MonoBehaviour:
   boidPrefab: {fileID: 5762183636519925906}
   friends: []
   avoids: []
-  boidSpeed: 34.75
   boidRange: 5.44
   separationRange: 1.72
-  alignmentRange: 173.5
-  cohesionRange: 175.8
-  avoidRange: 97.33
+  alignmentRange: 32.1
+  cohesionRange: 33.1
   raycastDistance: 28.01
   separationWeight: 151.18
   alignmentWheight: 105.9
   cohesionWeight: 111.5
   avoidWeight: 5e+20
-  minSpeed: 1
   defaultSpeed: 24.96
   rotationSpeed: 0.1
 --- !u!54 &4401356871844776425
