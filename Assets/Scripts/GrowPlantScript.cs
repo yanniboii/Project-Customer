@@ -48,6 +48,8 @@ public class GrowPlantScript : MonoBehaviour
         {
             while(growValue < maxGrow)
             {
+                //healthbar.UpdateHealthbar(hitPoints, maxHitPoints);
+
                 growValue += 1 / (timeToGrow / refreshRate);
                 material.SetFloat("_Grow", growValue);
 
@@ -58,6 +60,8 @@ public class GrowPlantScript : MonoBehaviour
         {
             while (growValue > minGrow)
             {
+                //healthbar.UpdateHealthbar(hitPoints, maxHitPoints);
+
                 growValue -= 1 / (timeToGrow / refreshRate);
                 material.SetFloat("_Grow", growValue);
 
