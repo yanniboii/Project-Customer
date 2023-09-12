@@ -21,7 +21,7 @@ public class Boid : MonoBehaviour
 
     public float raycastDistance;
 
-    public float separationWeight;--
+    public float separationWeight;
 
     public float alignmentWheight;
 
@@ -43,6 +43,8 @@ public class Boid : MonoBehaviour
 
     private void Update()
     {
+        
+
         DetectFriends();
         Vector3 flockingDirection = CalcutlateFlockingDirection();
 
