@@ -16,7 +16,7 @@ public class SpawnGrassUnderPlant : MonoBehaviour
     {
         terrain = GetComponentInParent<Terrain>();
         terrainData = terrain.terrainData;
-
+        // Arda was here 
         DespawnPlant();
     }
 
@@ -39,7 +39,7 @@ public class SpawnGrassUnderPlant : MonoBehaviour
             {
                 if(Vector2.Distance(new Vector2(x, y), new Vector2(terrainX, terrainY)) <= grassSpawnRadius)
                 {
-                    detailMap[y, x] = grassDensity;
+                    detailMap[y,x] = grassDensity;
                 }
             }
         }

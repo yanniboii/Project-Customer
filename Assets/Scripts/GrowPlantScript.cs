@@ -14,6 +14,7 @@ public class GrowPlantScript : MonoBehaviour
 
     private List<Material> growMaterials = new List<Material>();
     private bool fullyGrown;
+    private bool hasWater;
 
     private void Start()
     {
@@ -48,12 +49,16 @@ public class GrowPlantScript : MonoBehaviour
         {
             while(growValue < maxGrow)
             {
-                //healthbar.UpdateHealthbar(hitPoints, maxHitPoints);
+                //if (hasWater)
+                //{
+                    //healthbar.UpdateHealthbar(hitPoints, maxHitPoints);
 
-                growValue += 1 / (timeToGrow / refreshRate);
-                material.SetFloat("_Grow", growValue);
+                    growValue += 1 / (timeToGrow / refreshRate);
+                    material.SetFloat("_Grow", growValue);
 
-                yield return new WaitForSeconds(refreshRate);
+                    yield return new WaitForSeconds(refreshRate);
+                //}
+
             }
         }
         else
