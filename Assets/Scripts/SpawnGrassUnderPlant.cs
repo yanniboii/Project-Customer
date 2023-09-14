@@ -8,38 +8,43 @@ public class SpawnGrassUnderPlant : MonoBehaviour
     Terrain terrain;
     TerrainData terrainData;
 
+    [SerializeField] float grassSpawnRadius;
+    [SerializeField] int grassDensity;
+
     // Start is called before the first frame update
     void Start()
     {
         terrain = GetComponentInParent<Terrain>();
         terrainData = terrain.terrainData;
-
-        DespawnPlant();
+        // Arda was here 
+        //DespawnPlant();
+        SpawnPlant();
     }
 
     void SpawnPlant()
     {
 
-        // Define the area to paint grass (for example, the center of the terrain)
-        int xStart = (int)this.transform.position.x+20;
-        int yStart = (int)this.transform.position.z+20;
-        int xEnd = (int)this.transform.position.x -20;
-        int yEnd = (int)this.transform.position.z-20;
+        Vector3 terrainLocalPos = transform.position - terrain.transform.position;
 
-        // Get the detail map (grass map)
+
+        int terrainX = Mathf.Clamp(Mathf.FloorToInt(terrainLocalPos.x / terrainData.size.x * terrainData.detailWidth), 0, terrainData.detailWidth - 1);
+        int terrainY = Mathf.Clamp(Mathf.FloorToInt(terrainLocalPos.z / terrainData.size.z * terrainData.detailHeight), 0, terrainData.detailHeight - 1);
+
+
+
         int[,] detailMap = terrainData.GetDetailLayer(0, 0, terrainData.detailWidth, terrainData.detailHeight, 0);
 
-        // Paint grass in the specified area
-        for (int x = xStart; x < xEnd; x++)
+        for (int x = terrainX - (int)grassSpawnRadius; x <= terrainX + grassSpawnRadius; x++)
         {
-            for (int y = yStart; y < yEnd; y++)
+            for (int y = terrainY - (int)grassSpawnRadius; y <=terrainY + grassSpawnRadius; y++)
             {
-                // Set a value to indicate grass presence (e.g., 1)
-                detailMap[x, y] = 1;
+                if(Vector2.Distance(new Vector2(x, y), new Vector2(terrainX, terrainY)) <= grassSpawnRadius)
+                {
+                    detailMap[y,x] = grassDensity;
+                }
             }
         }
 
-        // Apply the modified detail map back to the terrain data
         terrainData.SetDetailLayer(0, 0, 0, detailMap);
 
         terrain.Flush();
@@ -47,26 +52,21 @@ public class SpawnGrassUnderPlant : MonoBehaviour
 
     void DespawnPlant()
     {
-        // Define the area to paint grass (for example, the center of the terrain)
-        int xStart = terrainData.detailWidth;
-        int yStart = terrainData.detailHeight;
-        int xEnd = 3 * terrainData.detailWidth;
-        int yEnd = 3 * terrainData.detailHeight;
+        int xStart = 0;
+        int yStart = 0;
+        int xEnd =  terrainData.detailWidth;
+        int yEnd =  terrainData.detailHeight;
 
-        // Get the detail map (grass map)
         int[,] detailMap = terrainData.GetDetailLayer(0, 0, terrainData.detailWidth, terrainData.detailHeight, 0);
 
-        // Paint grass in the specified area
         for (int x = xStart; x < xEnd; x++)
         {
             for (int y = yStart; y < yEnd; y++)
             {
-                // Set a value to indicate grass presence (e.g., 1)
                 detailMap[x, y] = 0;
             }
         }
 
-        // Apply the modified detail map back to the terrain data
         terrainData.SetDetailLayer(0, 0, 0, detailMap);
 
         terrain.Flush();
@@ -75,7 +75,7 @@ public class SpawnGrassUnderPlant : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space)) {
-            SpawnPlant();
+            //SpawnPlant();
         }
     }
 }

@@ -14,6 +14,8 @@ public class GrowPlantScript : MonoBehaviour
 
     private List<Material> growMaterials = new List<Material>();
     private bool fullyGrown;
+    bool startedGrowing = false;
+    private bool hasWater;
 
     private void Start()
     {
@@ -31,13 +33,16 @@ public class GrowPlantScript : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (!startedGrowing)
         {
-            for(int i = 0; i < growMaterials.Count; i++)
+            for (int i = 0; i < growMaterials.Count; i++)
             {
                 StartCoroutine(GrowPlant(growMaterials[i]));
             }
+            startedGrowing = true;
         }
+            
+        
     }
     
     IEnumerator GrowPlant(Material material)
@@ -48,12 +53,16 @@ public class GrowPlantScript : MonoBehaviour
         {
             while(growValue < maxGrow)
             {
-                //healthbar.UpdateHealthbar(hitPoints, maxHitPoints);
+                //if (hasWater)
+                //{
+                    //healthbar.UpdateHealthbar(hitPoints, maxHitPoints);
 
-                growValue += 1 / (timeToGrow / refreshRate);
-                material.SetFloat("_Grow", growValue);
+                    growValue += 1 / (timeToGrow / refreshRate);
+                    material.SetFloat("_Grow", growValue);
 
-                yield return new WaitForSeconds(refreshRate);
+                    yield return new WaitForSeconds(refreshRate);
+                //}
+
             }
         }
         else
@@ -62,8 +71,8 @@ public class GrowPlantScript : MonoBehaviour
             {
                 //healthbar.UpdateHealthbar(hitPoints, maxHitPoints);
 
-                growValue -= 1 / (timeToGrow / refreshRate);
-                material.SetFloat("_Grow", growValue);
+               // growValue -= 1 / (timeToGrow / refreshRate);
+               // material.SetFloat("_Grow", growValue);
 
                 yield return new WaitForSeconds(refreshRate);
             }
