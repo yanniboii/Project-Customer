@@ -11,7 +11,7 @@ public class GetWater : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -19,9 +19,9 @@ public class GetWater : MonoBehaviour
     {
         Ray hit;
 
-        if (Physics.Raycast(cam.position, cam.forward, out hit, 500f))
-        {
+        //if (Physics.Raycast(cam.position, cam.forward, out hit, 500f))
+        //{
 
-        }
+        //}
     }
 }
