@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Boid : MonoBehaviour
 {
@@ -8,9 +9,17 @@ public class Boid : MonoBehaviour
 
     public List<Transform> friends;
 
-    public float boidSpeed;
+    public List<Transform> avoids;
 
     public float boidRange;
+
+    public float separationRange;
+
+    public float alignmentRange;
+
+    public float cohesionRange;
+
+    public float raycastDistance;
 
     public float separationWeight;
 
@@ -18,22 +27,42 @@ public class Boid : MonoBehaviour
 
     public float cohesionWeight;
 
-    public Boid(GameObject boidPrefab, float boidRange, float boidSpeed)
+    public float avoidWeight;
+
+    public float defaultSpeed;
+
+    public float rotationSpeed;
+
+    public Boid(GameObject boidPrefab, float boidRange)
     {
         this.boidPrefab = boidPrefab;
         this.boidRange = boidRange;
 
         friends = new List<Transform>();
-        this.boidSpeed = boidSpeed;
     }
 
     private void Update()
     {
+        
+
         DetectFriends();
         Vector3 flockingDirection = CalcutlateFlockingDirection();
-        boidPrefab.GetComponent<Rigidbody>().velocity = flockingDirection * boidSpeed;
-    }
 
+        Quaternion targetRotation = Quaternion.LookRotation(flockingDirection);
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed);
+
+        boidPrefab.GetComponent<Rigidbody>().velocity = transform.forward * defaultSpeed;
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(boidPrefab.transform.position, cohesionRange);
+        Gizmos.color = Color.black;
+        Gizmos.DrawWireSphere(boidPrefab.transform.position, alignmentRange);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(boidPrefab.transform.position, separationRange);
+    }
 
     private void DetectFriends()
     {
@@ -51,11 +80,53 @@ public class Boid : MonoBehaviour
                 {
                     friends.Add(friendBoid.transform);
                 }
+                if (collider.tag == "Avoid")
+                {
+                    avoids.Add(collider.transform);
+                }
             }
         }
     }
 
+    //public Vector3 CalculateAvoidDirection()
+    //{
+    //    Vector3 avoiddir = Vector3.zero;
 
+    //    foreach (Transform avoid in avoids)
+    //    {
+    //        if (avoid != transform)
+    //        {
+    //            Vector3 offset = avoid.transform.position - boidPrefab.transform.position;
+    //            float distance = offset.magnitude;
+
+    //            // Check if the friend is too close
+    //            if (distance < avoidRange)
+    //            {
+    //                // Calculate a separation force based on the distance
+    //                avoiddir += -offset.normalized * avoidWeight;
+    //            }
+    //        }
+    //    }
+    //    return avoiddir;
+    //}
+
+    private Vector3 CalculateAvoidanceDirection()
+    {
+        Vector3 avoidanceDirection = Vector3.zero;
+
+        for (int i = -1; i <= 1; i++)
+        {
+            Vector3 rayDirection = transform.forward + transform.right * i;
+            Ray ray = new Ray(transform.position, rayDirection);
+            Debug.DrawRay(transform.position, rayDirection);
+            if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance))
+            {
+                avoidanceDirection += hit.normal * avoidWeight;
+            }
+        }
+
+        return avoidanceDirection;
+    }
 
     public Vector3 CalculateSeparationDirection()
     {
@@ -69,10 +140,10 @@ public class Boid : MonoBehaviour
                 float distance = offset.magnitude;
 
                 // Check if the friend is too close
-                if (distance < boidRange)
+                if (distance < separationRange)
                 {
                     // Calculate a separation force based on the distance
-                    float separationFactor = 1.0f - (distance / boidRange);
+                    float separationFactor = 1.0f - (distance / separationRange);
                     separation += -offset.normalized * separationFactor;
                 }
             }
@@ -93,7 +164,7 @@ public class Boid : MonoBehaviour
                 float distance = offset.magnitude;
 
                 // Check if the friend is within alignment range
-                if (distance < boidRange)
+                if (distance < alignmentRange)
                 {
                     // Add the friend's velocity to the alignment vector
                     Boid friendBoid = friend.GetComponent<Boid>();
@@ -120,7 +191,7 @@ public class Boid : MonoBehaviour
                 float distance = offset.magnitude;
 
                 // Check if the friend is within cohesion range
-                if (distance < boidRange)
+                if (distance < cohesionRange)
                 {
                     centerOfMass += friend.position;
                     count++;
@@ -147,14 +218,29 @@ public class Boid : MonoBehaviour
         Vector3 alignementDirection = CalculateAlignmentDirection();
         Vector3 separationDirection = CalculateSeparationDirection();
         Vector3 cohesionDirection = CalculateCohesionDirection();
+        //Vector3 avoidDirection = CalculateAvoidanceDirection();
 
+        //avoidDirection.Normalize();
         alignementDirection.Normalize();
         separationDirection.Normalize();
         cohesionDirection.Normalize();
 
-        Vector3 flockingDirection = alignementDirection * alignmentWheight + separationDirection * separationWeight + cohesionDirection * cohesionWeight;
+        Vector3 flockingDirection =
+            alignementDirection * alignmentWheight +
+            separationDirection * separationWeight +
+            cohesionDirection * cohesionWeight;
+        //avoidDirection * avoidWeight;
 
-        return flockingDirection.normalized;
+        flockingDirection += CalculateAvoidanceDirection();
+
+        flockingDirection.Normalize();
+
+        //if (flockingDirection.magnitude < minSpeed)
+        //{
+        //    flockingDirection = transform.forward * defaultSpeed;
+        //}
+
+        return flockingDirection;
     }
 
 
