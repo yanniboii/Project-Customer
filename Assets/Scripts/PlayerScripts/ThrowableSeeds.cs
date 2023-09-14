@@ -19,6 +19,9 @@ public class ThrowableSeeds : MonoBehaviour
     public float throwUpwardForce;
     bool readyToThrow;
 
+    public bool isGrass = true;
+    public bool isFern = false;
+
     public int GetSeedNumbers()
     {
         return totalThrows;
@@ -35,6 +38,16 @@ public class ThrowableSeeds : MonoBehaviour
         {
             Throw();
         }
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            isGrass= true;
+            isFern= false;
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            isGrass= false;
+            isFern= true;
+        }
     }
 
     private void Throw()
@@ -46,6 +59,8 @@ public class ThrowableSeeds : MonoBehaviour
 
         //get rb component for our throwable
         Rigidbody throwableRB = throwable.GetComponent<Rigidbody>();
+
+        throwable.transform.parent = this.gameObject.transform;
 
         //correct direction of throwable
         Vector3 forceDirection = cam.transform.forward;

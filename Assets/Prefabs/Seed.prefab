@@ -129,7 +129,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  plant: {fileID: 919132149155446097, guid: 9a1ff2f404b95e44d9cc0fcff5b0221f, type: 3}
+  plants:
+  - {fileID: 56201186547166023, guid: 497371e208d92df4fac91e96835a8e2e, type: 3}
+  - {fileID: 6718837755480288502, guid: 95d081c6a6fa1af4aa75480f3e02e4fe, type: 3}
+  one: 49
 --- !u!114 &6051100883663405772
 MonoBehaviour:
   m_ObjectHideFlags: 0

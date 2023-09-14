@@ -17,7 +17,8 @@ public class SpawnGrassUnderPlant : MonoBehaviour
         terrain = GetComponentInParent<Terrain>();
         terrainData = terrain.terrainData;
         // Arda was here 
-        DespawnPlant();
+        //DespawnPlant();
+        SpawnPlant();
     }
 
     void SpawnPlant()
@@ -74,7 +75,7 @@ public class SpawnGrassUnderPlant : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space)) {
-            SpawnPlant();
+            //SpawnPlant();
         }
     }
 }
