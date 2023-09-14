@@ -19,7 +19,7 @@ public class ThrowableSeeds : MonoBehaviour
     public float throwUpwardForce;
     bool readyToThrow;
 
-    public int GetAmmo()
+    public int GetSeedNumbers()
     {
         return totalThrows;
     }

@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     public int hitPoints;
     public int maxHitPoints;
 
-    GameManager gameManager;
+    //GameManager gameManager;
 
     [SerializeField] Healthbar healthbar;
 
@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
         {
             Destroy(healthbar);
             Destroy(gameObject);
-            gameManager.TestUpdate();
+            //gameManager.TestUpdate();
         }
     }
 
