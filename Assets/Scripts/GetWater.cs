@@ -17,7 +17,7 @@ public class GetWater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Ray hit;
+        RaycastHit hit;
 
         //if (Physics.Raycast(cam.position, cam.forward, out hit, 500f))
         //{
