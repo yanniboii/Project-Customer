@@ -1145,6 +1145,11 @@ MonoBehaviour:
   throwUpwardForce: 0
   isGrass: 1
   isFern: 0
+  isFatM: 0
+  isMTall: 0
+  isMTall2: 0
+  isMush: 0
+  isMush2: 0
 --- !u!114 &1517526710
 MonoBehaviour:
   m_ObjectHideFlags: 0

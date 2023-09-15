@@ -33,15 +33,36 @@ public class ThrowableAddons : MonoBehaviour
         if (collision.gameObject.GetComponent<Terrain>() != null)
         {
             GameObject plant;
-            if (gameObject.GetComponentInParent<ThrowableSeeds>().isGrass)
+            ThrowableSeeds thisPlant = collision.gameObject.GetComponent<ThrowableSeeds>();
+            if (thisPlant.isGrass)
             {
                 plant = Instantiate(plants[0]);
                 plant.transform.position = this.gameObject.transform.position;
                 plant.transform.parent = collision.gameObject.transform;
             }
-            if (gameObject.GetComponentInParent<ThrowableSeeds>().isFern)
+            if (thisPlant.isFern)
             {
                 plant = Instantiate(plants[1]);
+                plant.transform.position = this.gameObject.transform.position;
+                plant.transform.parent = collision.gameObject.transform;
+            }
+            if (thisPlant.isFatM)
+            {
+                plant = Instantiate(plants[2]);
+                plant.transform.position = this.gameObject.transform.position;
+                plant.transform.parent = collision.gameObject.transform;
+            }
+            if (thisPlant.isMTall)
+            {
+                float random = UnityEngine.Random.Range(3, 4);
+                plant = Instantiate(plants[(int)random]);
+                plant.transform.position = this.gameObject.transform.position;
+                plant.transform.parent = collision.gameObject.transform;
+            }
+            if (thisPlant.isMush)
+            {
+                float random = UnityEngine.Random.Range(5, 6);
+                plant = Instantiate(plants[(int)random]);
                 plant.transform.position = this.gameObject.transform.position;
                 plant.transform.parent = collision.gameObject.transform;
             }

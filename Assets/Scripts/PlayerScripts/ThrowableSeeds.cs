@@ -21,6 +21,11 @@ public class ThrowableSeeds : MonoBehaviour
 
     public bool isGrass = true;
     public bool isFern = false;
+    public bool isFatM = false;
+    public bool isMTall = false;
+    public bool isMTall2 = false;
+    public bool isMush = false;
+    public bool isMush2 = false;
 
     public int GetSeedNumbers()
     {
@@ -40,16 +45,41 @@ public class ThrowableSeeds : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            isGrass= true;
-            isFern= false;
+            SetEveryPlantFalse();
+            isGrass = true;
         }
         if(Input.GetKeyDown(KeyCode.Alpha2))
         {
-            isGrass= false;
-            isFern= true;
+            SetEveryPlantFalse();
+            isFern = true;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            SetEveryPlantFalse();
+            isFatM = true;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            SetEveryPlantFalse();
+            isMTall = true;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            SetEveryPlantFalse();
+            isMush = true;
         }
     }
 
+    void SetEveryPlantFalse()
+    {
+        isGrass = false;
+        isFern = false;
+        isFatM = false;
+        isMTall = false;
+        isMTall2 = false;
+        isMush = false;
+        isMush2 = false;
+    }
     private void Throw()
     {
         readyToThrow = false;

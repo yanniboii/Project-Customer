@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dacf66d2e82f134cb55daef167d929e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boidAmount: 28
+  boidAmount: 283
   spawnRange: 6.59
   boidPrefab: {fileID: 5762183636519925906, guid: b5fc82164368a7b4e93cf32f6f8de5ee,
     type: 3}
