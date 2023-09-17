@@ -25,6 +25,8 @@ public class GrowPlantScript : MonoBehaviour
 
     [SerializeField] int money;
 
+    [SerializeField] GameObject fullyGrownGO;
+
     private void Start()
     {
         moneyUI = FindObjectOfType<MoneyUI>();
@@ -119,6 +121,7 @@ public class GrowPlantScript : MonoBehaviour
         if (growValue >= maxGrow)
         {
             fullyGrown = true;
+            fullyGrownGO.SetActive(false);
             moneyUI.money += money;
 
         }
