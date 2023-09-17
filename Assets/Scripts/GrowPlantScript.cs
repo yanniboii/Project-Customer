@@ -15,10 +15,13 @@ public class GrowPlantScript : MonoBehaviour
     [SerializeField] MoneyUI moneyUI;
 
     private List<Material> growMaterials = new List<Material>();
-    private bool fullyGrown;
+    private bool fullyGrown = false;
     bool startedGrowing = false;
     private bool hasWater;
+    float water;
     private bool hasGivenMoney = false;
+
+    [SerializeField] WaterUI waterUI;
 
     [SerializeField] int money;
 
@@ -39,17 +42,45 @@ public class GrowPlantScript : MonoBehaviour
     }
     private void Update()
     {
-        if (!startedGrowing)
+        CheckWater();
+    }
+
+    public void AddWater(float water)
+    {
+        this.water += water;
+        waterUI.SetWater(this.water);
+    }
+
+    void StartGrowing()
+    {
+
+        for (int i = 0; i < growMaterials.Count; i++)
         {
-            for (int i = 0; i < growMaterials.Count; i++)
-            {
-                StartCoroutine(GrowPlant(growMaterials[i]));
-            }
-            startedGrowing = true;
+            StartCoroutine(GrowPlant(growMaterials[i]));
         }
 
     }
 
+    void CheckWater()
+    {
+        if (water > 0)
+        {
+            if (!startedGrowing)
+            {
+                Debug.Log("ASDASDASDADADa");
+                StartGrowing();
+            }
+            hasWater = true;
+            water -= 0.0001f;
+            waterUI.SetWater(this.water);
+            startedGrowing= true;
+        }
+        else
+        {
+            hasWater = false;
+            startedGrowing= false;
+        }
+    }
 
     IEnumerator GrowPlant(Material material)
     {
@@ -62,10 +93,11 @@ public class GrowPlantScript : MonoBehaviour
                 //if (hasWater)
                 //{
                 //healthbar.UpdateHealthbar(hitPoints, maxHitPoints);
-
-                growValue += 1 / (timeToGrow / refreshRate);
-                material.SetFloat("_Grow", growValue);
-
+                if (hasWater)
+                {
+                    growValue += 1 / (timeToGrow / refreshRate);
+                    material.SetFloat("_Grow", growValue);
+                }
                 yield return new WaitForSeconds(refreshRate);
                 //}
 

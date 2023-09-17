@@ -33,7 +33,7 @@ public class ThrowableAddons : MonoBehaviour
         if (collision.gameObject.GetComponent<Terrain>() != null)
         {
             GameObject plant;
-            ThrowableSeeds thisPlant = collision.gameObject.GetComponent<ThrowableSeeds>();
+            ThrowableSeeds thisPlant = this.gameObject.GetComponentInParent<ThrowableSeeds>();
             if (thisPlant.isGrass)
             {
                 plant = Instantiate(plants[0]);
