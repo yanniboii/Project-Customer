@@ -165,6 +165,8 @@ MonoBehaviour:
   refreshRate: 0.05
   minGrow: 0.1
   maxGrow: 1
+  moneyUI: {fileID: 0}
+  money: 1
 --- !u!23 &3954124117323639819 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 9a1ff2f404b95e44d9cc0fcff5b0221f,
