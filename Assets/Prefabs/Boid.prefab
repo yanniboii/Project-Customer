@@ -53,7 +53,7 @@ MonoBehaviour:
   friends: []
   avoids: []
   boidRange: 5.44
-  separationRange: 1.72
+  separationRange: 2
   alignmentRange: 32.1
   cohesionRange: 33.1
   raycastDistance: 28.01
@@ -107,7 +107,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1ff866dd4ba40db44a29d47510f16e4c, type: 2}
+  - {fileID: 2100000, guid: d084899363a3cd74788f3ed620f96f17, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -161,3 +161,5 @@ MonoBehaviour:
   refreshRate: 0.05
   minGrow: 0
   maxGrow: 1
+  moneyUI: {fileID: 0}
+  money: 0

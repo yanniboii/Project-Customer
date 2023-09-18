@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -31,8 +32,11 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody rb;
 
+    MessageUI message;
     private void Start()
     {
+        message = FindObjectOfType<MessageUI>();
+        message.SetNewMessage();
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
     }
