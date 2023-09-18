@@ -68,6 +68,11 @@ public class ThrowableSeeds : MonoBehaviour
             SetEveryPlantFalse();
             isMush = true;
         }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            isGrass = false;
+            isFern = false;
+        }
     }
 
     void SetEveryPlantFalse()
