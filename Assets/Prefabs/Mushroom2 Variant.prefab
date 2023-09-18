@@ -704,7 +704,7 @@ MonoBehaviour:
   - {fileID: 4052735061844532712}
   timeToGrow: 5
   refreshRate: 0.05
-  minGrow: 0.175
+  minGrow: 0.007
   maxGrow: 1
   moneyUI: {fileID: 0}
   waterUI: {fileID: 1961962764987939335}

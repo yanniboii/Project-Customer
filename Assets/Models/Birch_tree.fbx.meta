@@ -3,7 +3,22 @@ guid: e1efd114043d0fc4ca21ff5e4c254be0
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FOX_LIFE_ON_LAND_BLACK
+    second: {fileID: 2100000, guid: ff8d36422e1d8284790b317ff18dc554, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn4
+    second: {fileID: 2100000, guid: 6531b35c2dac74b428661b017f325ca6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn5
+    second: {fileID: 2100000, guid: 0065c43113e12674bad4bc7f055fbd70, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -25,6 +25,7 @@ public class GetWater : MonoBehaviour
             {
                 if (hit.collider.CompareTag("Water"))
                 {
+                    Debug.Log(water);
                     water += 0.001f;
                     waterUI.SetWater(water);
                 }
@@ -33,6 +34,7 @@ public class GetWater : MonoBehaviour
             {
                 if (hit.collider.CompareTag("Plant"))
                 {
+                    Debug.Log("Plant");
                     water -= 0.001f;
                     waterUI.SetWater(water);
                     hit.collider.GetComponent<GrowPlantScript>().AddWater(0.001f);

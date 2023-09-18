@@ -445,7 +445,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0f90f470dccc7d34eb3b123451371534,
         type: 3}
       propertyPath: m_TagString
-      value: FullyGrownPlant
+      value: Plant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f90f470dccc7d34eb3b123451371534, type: 3}
@@ -497,7 +497,7 @@ MonoBehaviour:
   - {fileID: 2645835091531135867}
   timeToGrow: 5
   refreshRate: 0.05
-  minGrow: 1
+  minGrow: 0.007
   maxGrow: 1
   moneyUI: {fileID: 0}
   waterUI: {fileID: 4333206686858115789}
