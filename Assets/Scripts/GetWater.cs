@@ -18,28 +18,31 @@ public class GetWater : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-
-        if (Physics.Raycast(cam.position, cam.forward, out hit, 500f))
+        if (Input.GetKey(KeyCode.R))
         {
-            if(water <= 1)
+            if (Physics.Raycast(cam.position, cam.forward, out hit, 500f))
             {
-                if (hit.collider.CompareTag("Water"))
+                if (water <= 1)
                 {
-                    Debug.Log(water);
-                    water += 0.001f;
-                    waterUI.SetWater(water);
+                    if (hit.collider.CompareTag("Water"))
+                    {
+                        Debug.Log(water);
+                        water += 0.001f;
+                        waterUI.SetWater(water);
+                    }
                 }
-            }
-            if(water > 0f) 
-            {
-                if (hit.collider.CompareTag("Plant"))
+                if (water > 0f)
                 {
-                    Debug.Log("Plant");
-                    water -= 0.001f;
-                    waterUI.SetWater(water);
-                    hit.collider.GetComponent<GrowPlantScript>().AddWater(0.001f);
+                    if (hit.collider.CompareTag("Plant"))
+                    {
+                        Debug.Log("Plant");
+                        water -= 0.001f;
+                        waterUI.SetWater(water);
+                        hit.collider.GetComponent<GrowPlantScript>().AddWater(0.001f);
+                    }
                 }
             }
         }
+
     }
 }

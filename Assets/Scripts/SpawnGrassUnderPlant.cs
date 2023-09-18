@@ -33,6 +33,7 @@ public class SpawnGrassUnderPlant : MonoBehaviour
 
 
         int[,] detailMap = terrainData.GetDetailLayer(0, 0, terrainData.detailWidth, terrainData.detailHeight, 0);
+        //float[,,] materialMap = terrainData.GetAlphamaps(0,0,terrainData.alphamapWidth,terrainData.alphamapHeight);
 
         for (int x = terrainX - (int)grassSpawnRadius; x <= terrainX + grassSpawnRadius; x++)
         {
@@ -41,11 +42,20 @@ public class SpawnGrassUnderPlant : MonoBehaviour
                 if(Vector2.Distance(new Vector2(x, y), new Vector2(terrainX, terrainY)) <= grassSpawnRadius)
                 {
                     detailMap[y,x] = grassDensity;
+
+                }
+                if (x >= 0 && x < terrainData.alphamapWidth && y >= 0 && y < terrainData.alphamapHeight)
+                {
+                    // Set alpha values to change the material or texture
+                    //materialMap[y, x, 0] = 1.0f; // For the first terrain layer
+                   // materialMap[y, x, 1] = 0.0f; // For other layers (adjust as needed)
                 }
             }
         }
+        
 
         terrainData.SetDetailLayer(0, 0, 0, detailMap);
+        //terrainData.SetAlphamaps(0, 0, materialMap);
 
         terrain.Flush();
     }
