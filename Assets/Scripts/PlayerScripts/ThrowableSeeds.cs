@@ -48,6 +48,11 @@ public class ThrowableSeeds : MonoBehaviour
             isGrass= false;
             isFern= true;
         }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            isGrass = false;
+            isFern = false;
+        }
     }
 
     private void Throw()
