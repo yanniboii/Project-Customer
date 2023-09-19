@@ -731,8 +731,10 @@ MonoBehaviour:
   minGrow: 0.007
   maxGrow: 1
   moneyUI: {fileID: 0}
+  plant: TallM
   waterUI: {fileID: 7967550836543707342}
   money: 14
+  isRed: 0
   fullyGrownGO: {fileID: 794727250635981596}
   redGO: {fileID: 5556020215873980412}
 --- !u!23 &5875159952232600587 stripped

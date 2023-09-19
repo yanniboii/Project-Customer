@@ -21,11 +21,15 @@ public class GrowPlantScript : MonoBehaviour
     float water;
     private bool hasGivenMoney = false;
 
+    [SerializeField] string plant;
+
     [SerializeField] WaterUI waterUI;
 
     [SerializeField] int money;
 
     public bool isRed;
+
+    AnimalManager animalManager;
 
     public GameObject fullyGrownGO;
     public GameObject redGO;
@@ -33,6 +37,7 @@ public class GrowPlantScript : MonoBehaviour
     private void Start()
     {
         moneyUI = FindObjectOfType<MoneyUI>();
+        animalManager = FindObjectOfType<AnimalManager>();
         for (int i = 0; i < growMeshes.Count; i++)
         {
             for (int j = 0; j < growMeshes[i].materials.Length; j++)
@@ -131,6 +136,22 @@ public class GrowPlantScript : MonoBehaviour
         if (growValue >= maxGrow)
         {
             fullyGrown = true;
+            if (plant == "Fern")
+            {
+                animalManager.fernAmount += 1;
+            }
+            else if(plant == "TallM")
+            {
+                animalManager.tallMAmount+= 1;
+            }
+            else if (plant == "FatM")
+            {
+                animalManager.fatMAmount         += 1;
+            }
+            else if (plant == "Mush")
+            {
+                animalManager.mushAmount += 1;
+            }
             fullyGrownGO.SetActive(false);
             moneyUI.money += money;
 

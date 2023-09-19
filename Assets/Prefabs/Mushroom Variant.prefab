@@ -500,8 +500,10 @@ MonoBehaviour:
   minGrow: 0.007
   maxGrow: 1
   moneyUI: {fileID: 0}
+  plant: Mush
   waterUI: {fileID: 4333206686858115789}
   money: 16
+  isRed: 0
   fullyGrownGO: {fileID: 8739861750305968102}
   redGO: {fileID: 6010400578494825170}
 --- !u!1001 &6892850122656432003

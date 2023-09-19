@@ -533,8 +533,10 @@ MonoBehaviour:
   minGrow: 0.007
   maxGrow: 1
   moneyUI: {fileID: 0}
+  plant: Fern
   waterUI: {fileID: 5847143983475392779}
   money: 12
+  isRed: 0
   fullyGrownGO: {fileID: 6599312490721490624}
   redGO: {fileID: 2985331178059892341}
 --- !u!23 &3705951391421619699 stripped
