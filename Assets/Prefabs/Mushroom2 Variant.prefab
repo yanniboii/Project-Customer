@@ -589,6 +589,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ef4be4c944975b4d80f247048dacfbf, type: 3}
+--- !u!1 &2888868546151629992 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3ef4be4c944975b4d80f247048dacfbf,
+    type: 3}
+  m_PrefabInstance: {fileID: 2654374395155839481}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2767137699411808536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2888868546151629992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30913144f04205b4cb0456d14a3f6939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3458659720118731116
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -710,6 +728,7 @@ MonoBehaviour:
   waterUI: {fileID: 1961962764987939335}
   money: 7
   fullyGrownGO: {fileID: 2225307602038016222}
+  redGO: {fileID: 2888868546151629992}
 --- !u!4 &2915264704972351111 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3ef4be4c944975b4d80f247048dacfbf,

@@ -15,8 +15,8 @@ public class Boids : MonoBehaviour
     {
         for (int i = 0; i < boidAmount; i++)
         {
-            Vector3 pos = new Vector3(Random.Range(-spawnRange, spawnRange), Random.Range(-spawnRange, spawnRange), Random.Range(-spawnRange, spawnRange));
-            GameObject boid = Instantiate(boidPrefab, pos, Quaternion.identity);
+            Vector3 pos = new Vector3(this.transform.position.x + Random.Range(-spawnRange, spawnRange), this.transform.position.y + Random.Range(-spawnRange, spawnRange), this.transform.position.z + Random.Range(-spawnRange, spawnRange));
+            GameObject boid = Instantiate(boidPrefab, pos, Random.rotation);
         }
     }
 
