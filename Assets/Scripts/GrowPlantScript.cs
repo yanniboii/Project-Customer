@@ -59,7 +59,11 @@ public class GrowPlantScript : MonoBehaviour
     private void Red()
     {
         redGO.SetActive(false);
-        fullyGrownGO.SetActive(true);
+        if (!fullyGrown)
+        {
+            fullyGrownGO.SetActive(true);
+
+        }
     }
 
     public void AddWater(float water)

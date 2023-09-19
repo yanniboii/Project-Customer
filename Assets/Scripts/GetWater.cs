@@ -6,6 +6,10 @@ public class GetWater : MonoBehaviour
 {
     public Transform cam;
     [SerializeField] WaterUI waterUI;
+    [SerializeField] GameObject wateringCan;
+    [SerializeField] Transform equipTransform;
+
+    public bool hasWateringCan;
 
     float water;
     // Start is called before the first frame update
@@ -17,9 +21,13 @@ public class GetWater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GameObject waterCan;
         RaycastHit hit;
         if (Input.GetKey(KeyCode.R))
         {
+
+            hasWateringCan = true;
+            waterCan = Instantiate(wateringCan, equipTransform);
             if (Physics.Raycast(cam.position, cam.forward, out hit, 500f))
             {
                 if (water <= 1)
@@ -42,6 +50,11 @@ public class GetWater : MonoBehaviour
                     }
                 }
             }
+        }
+        else
+        {
+            hasWateringCan = false;
+            //Destroy(wateringCan);
         }
 
     }
