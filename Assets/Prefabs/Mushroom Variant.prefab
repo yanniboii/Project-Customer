@@ -503,6 +503,7 @@ MonoBehaviour:
   waterUI: {fileID: 4333206686858115789}
   money: 16
   fullyGrownGO: {fileID: 8739861750305968102}
+  redGO: {fileID: 6010400578494825170}
 --- !u!1001 &6892850122656432003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -612,6 +613,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f90f470dccc7d34eb3b123451371534, type: 3}
+--- !u!1 &6010400578494825170 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0f90f470dccc7d34eb3b123451371534,
+    type: 3}
+  m_PrefabInstance: {fileID: 6892850122656432003}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3901055515478535577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6010400578494825170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30913144f04205b4cb0456d14a3f6939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8469951644599055031
 PrefabInstance:
   m_ObjectHideFlags: 0

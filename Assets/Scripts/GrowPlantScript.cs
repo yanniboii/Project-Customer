@@ -25,7 +25,10 @@ public class GrowPlantScript : MonoBehaviour
 
     [SerializeField] int money;
 
-    [SerializeField] GameObject fullyGrownGO;
+    public bool isRed;
+
+    public GameObject fullyGrownGO;
+    public GameObject redGO;
 
     private void Start()
     {
@@ -41,10 +44,17 @@ public class GrowPlantScript : MonoBehaviour
                 }
             }
         }
+        InvokeRepeating("Red", 0.5f, 0.5f);
     }
     private void Update()
     {
         CheckWater();
+    }
+
+    private void Red()
+    {
+        redGO.SetActive(false);
+        fullyGrownGO.SetActive(true);
     }
 
     public void AddWater(float water)
@@ -75,12 +85,12 @@ public class GrowPlantScript : MonoBehaviour
             hasWater = true;
             water -= 0.0001f;
             waterUI.SetWater(this.water);
-            startedGrowing= true;
+            startedGrowing = true;
         }
         else
         {
             hasWater = false;
-            startedGrowing= false;
+            startedGrowing = false;
         }
     }
 
