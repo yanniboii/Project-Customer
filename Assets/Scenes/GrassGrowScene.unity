@@ -4375,6 +4375,7 @@ GameObject:
   - component: {fileID: 1517526709}
   - component: {fileID: 1517526715}
   - component: {fileID: 1517526716}
+  - component: {fileID: 1517526717}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4560,6 +4561,19 @@ MonoBehaviour:
   Inventory: {fileID: 2025721533}
   openCloseKey: 105
   inventoryIsOpen: 0
+--- !u!114 &1517526717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517526707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b444e6e0205990041a4921e079f251cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1155984938}
 --- !u!224 &1527103159 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5342275998385700890, guid: 8c2090d0fce203547aa6ca26a5b409bd,
@@ -6051,7 +6065,7 @@ PrefabInstance:
     - target: {fileID: 2087889529795052296, guid: b7c02de5e96acab459d0c14add2d3eb7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 240.96626
+      value: 257
       objectReference: {fileID: 0}
     - target: {fileID: 2087889529795052296, guid: b7c02de5e96acab459d0c14add2d3eb7,
         type: 3}
@@ -6061,7 +6075,7 @@ PrefabInstance:
     - target: {fileID: 2087889529795052296, guid: b7c02de5e96acab459d0c14add2d3eb7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 284.14447
+      value: 263
       objectReference: {fileID: 0}
     - target: {fileID: 2087889529795052296, guid: b7c02de5e96acab459d0c14add2d3eb7,
         type: 3}
