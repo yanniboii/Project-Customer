@@ -8,26 +8,55 @@ public class GetWater : MonoBehaviour
     [SerializeField] WaterUI waterUI;
     [SerializeField] GameObject wateringCan;
     [SerializeField] Transform equipTransform;
+    ThrowableSeeds throwableSeeds;
+    RemovePlant removePlant;
 
-    public bool hasWateringCan;
+    GameObject waterCan;
+
+
+    public bool hasWateringCan = false;
 
     float water;
     // Start is called before the first frame update
     void Start()
     {
+        throwableSeeds= FindObjectOfType<ThrowableSeeds>();
         waterUI = FindObjectOfType<WaterUI>();
+        removePlant = FindObjectOfType<RemovePlant>();
+    }
+
+    public void DestroyWateringCan()
+    {
+        throwableSeeds.enabled = true;
+        Destroy(waterCan);
+        hasWateringCan = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        GameObject waterCan;
         RaycastHit hit;
-        if (Input.GetKey(KeyCode.R))
-        {
 
-            hasWateringCan = true;
-            waterCan = Instantiate(wateringCan, equipTransform);
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            if(hasWateringCan)
+            {
+                throwableSeeds.enabled = true;
+                Destroy(waterCan);
+                hasWateringCan = false;
+            }
+            else
+            {
+                removePlant.DestroyShovel();
+                throwableSeeds.enabled = false;
+                waterCan = Instantiate(wateringCan, equipTransform);
+                hasWateringCan = true;
+            }
+        }
+
+
+        if (Input.GetKey(KeyCode.Mouse0) && hasWateringCan)
+        {
             if (Physics.Raycast(cam.position, cam.forward, out hit, 500f))
             {
                 if (water <= 1)
@@ -51,11 +80,7 @@ public class GetWater : MonoBehaviour
                 }
             }
         }
-        else
-        {
-            hasWateringCan = false;
-            //Destroy(wateringCan);
-        }
-
     }
+
 }
+
