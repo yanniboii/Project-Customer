@@ -21,7 +21,6 @@ public class GetWater : MonoBehaviour
     void Start()
     {
         throwableSeeds= FindObjectOfType<ThrowableSeeds>();
-        waterUI = FindObjectOfType<WaterUI>();
         removePlant = FindObjectOfType<RemovePlant>();
     }
 
