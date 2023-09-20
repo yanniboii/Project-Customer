@@ -40,13 +40,13 @@ public class ThrowableSeeds : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            isGrass= true;
-            isFern= false;
+            isGrass = true;
+            isFern = false;
         }
         if(Input.GetKeyDown(KeyCode.Alpha2))
         {
-            isGrass= false;
-            isFern= true;
+            isGrass = false;
+            isFern = true;
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
