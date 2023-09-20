@@ -7,7 +7,18 @@ public class InventoryController : MonoBehaviour
     public GameObject Inventory;
     public GameObject Player;
     public KeyCode openCloseKey = KeyCode.I;
-    public bool inventoryIsOpen = false;  
+    public bool inventoryIsOpen = false;
+
+    PlayerMovement playerMovement;
+    ThrowableSeeds throwableSeeds;
+    GetWater getWater;
+
+    private void Start()
+    {
+        playerMovement = FindObjectOfType<PlayerMovement>();
+        throwableSeeds = FindObjectOfType<ThrowableSeeds>();
+        getWater = FindObjectOfType<GetWater>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -20,17 +31,17 @@ public class InventoryController : MonoBehaviour
 
         if(inventoryIsOpen == true)
         {
-            //Cursor.lockState = CursorLockMode.None;
-            transform.GetComponent<PlayerMovement>().enabled = false;
-            transform.GetComponent<ThrowableSeeds>().enabled = false;
-            transform.GetComponent<GetWater>().enabled = false;
+            Cursor.lockState = CursorLockMode.None;
+            playerMovement.enabled = false;
+            throwableSeeds.enabled = false;
+            getWater.enabled = false;
         }
         else if (inventoryIsOpen == false)
         {
             Cursor.lockState = CursorLockMode.Locked;
-            //transform.GetComponent<PlayerMovement>().enabled = true;
-            //transform.GetComponent<ThrowableSeeds>().enabled = true;
-            //transform.GetComponent<GetWater>().enabled = true;
+            playerMovement.enabled = true;
+            throwableSeeds.enabled = true;
+            getWater.enabled = true;
         }
     }
 }

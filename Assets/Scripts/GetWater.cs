@@ -25,6 +25,7 @@ public class GetWater : MonoBehaviour
         messageUI = FindObjectOfType<MessageUI>();
         throwableSeeds= FindObjectOfType<ThrowableSeeds>();
         removePlant = FindObjectOfType<RemovePlant>();
+        throwableSeeds.enabled = false;
     }
 
     public void DestroyWateringCan()
