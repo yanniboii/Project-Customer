@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 2507467754400847582}
   - component: {fileID: 371731596360802836}
   - component: {fileID: 1974795740492630686}
+  - component: {fileID: 815108172946590232}
   m_Layer: 0
   m_Name: Mushrooms 1
   m_TagString: Plant
@@ -115,8 +116,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2173087541189690305}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 223.29984, y: 25.87, z: -259.62997}
-  m_LocalScale: {x: 38.66501, y: 38.66501, z: 23.599573}
+  m_LocalPosition: {x: 223.23, y: 25.948, z: -259.76}
+  m_LocalScale: {x: 12.691789, y: 12.691789, z: 7.7465596}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 659987082464553669}
@@ -204,6 +205,20 @@ MonoBehaviour:
   isRed: 0
   fullyGrownGO: {fileID: 1267893362784555202}
   redGO: {fileID: 6420099195069477944}
+--- !u!64 &815108172946590232
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2173087541189690305}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1830797768943920831, guid: 969af67da2ea6d944a9f93cb798bc739, type: 3}
 --- !u!1 &6420099195069477944
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,6 +496,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4568868911928036322, guid: 95743896c373b3f40a84bec5683ddf6c,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.062286675
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568868911928036322, guid: 95743896c373b3f40a84bec5683ddf6c,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.062286682
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568868911928036322, guid: 95743896c373b3f40a84bec5683ddf6c,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.062286682
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568868911928036322, guid: 95743896c373b3f40a84bec5683ddf6c,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -492,7 +522,7 @@ PrefabInstance:
     - target: {fileID: 4568868911928036322, guid: 95743896c373b3f40a84bec5683ddf6c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0063
+      value: 0.056
       objectReference: {fileID: 0}
     - target: {fileID: 4568868911928036322, guid: 95743896c373b3f40a84bec5683ddf6c,
         type: 3}
@@ -522,7 +552,7 @@ PrefabInstance:
     - target: {fileID: 4568868911928036322, guid: 95743896c373b3f40a84bec5683ddf6c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4568868911928036322, guid: 95743896c373b3f40a84bec5683ddf6c,
         type: 3}
