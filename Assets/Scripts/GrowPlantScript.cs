@@ -21,11 +21,15 @@ public class GrowPlantScript : MonoBehaviour
     float water;
     private bool hasGivenMoney = false;
 
+    [SerializeField] string plant;
+
     [SerializeField] WaterUI waterUI;
 
     [SerializeField] int money;
 
     public bool isRed;
+
+    AnimalManager animalManager;
 
     public GameObject fullyGrownGO;
     public GameObject redGO;
@@ -33,6 +37,7 @@ public class GrowPlantScript : MonoBehaviour
     private void Start()
     {
         moneyUI = FindObjectOfType<MoneyUI>();
+        animalManager = FindObjectOfType<AnimalManager>();
         for (int i = 0; i < growMeshes.Count; i++)
         {
             for (int j = 0; j < growMeshes[i].materials.Length; j++)
@@ -54,7 +59,11 @@ public class GrowPlantScript : MonoBehaviour
     private void Red()
     {
         redGO.SetActive(false);
-        fullyGrownGO.SetActive(true);
+        if (!fullyGrown)
+        {
+            fullyGrownGO.SetActive(true);
+
+        }
     }
 
     public void AddWater(float water)
@@ -131,6 +140,46 @@ public class GrowPlantScript : MonoBehaviour
         if (growValue >= maxGrow)
         {
             fullyGrown = true;
+            if (plant == "Fern")
+            {
+                animalManager.plants[1] += 1;
+            }
+            else if(plant == "Grass")
+            {
+                animalManager.plants[0] += 1;
+            }
+            else if (plant == "Mushroom")
+            {
+                animalManager.plants[2]         += 1;
+            }
+            else if (plant == "Berry")
+            {
+                animalManager.plants[3] += 1;
+            }
+            else if (plant == "Bramble")
+            {
+                animalManager.plants[4] += 1;
+            }
+            else if (plant == "Holly")
+            {
+                animalManager.plants[5] += 1;
+            }
+            else if (plant == "Lavender")
+            {
+                animalManager.plants[6] += 1;
+            }
+            else if (plant == "Oak")
+            {
+                animalManager.plants[7] += 1;
+            }
+            else if (plant == "Ash")
+            {
+                animalManager.plants[8] += 1;
+            }
+            else if (plant == "Hazel")
+            {
+                animalManager.plants[9] += 1;
+            }
             fullyGrownGO.SetActive(false);
             moneyUI.money += money;
 

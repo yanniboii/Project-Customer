@@ -52,7 +52,7 @@ public class Boid : MonoBehaviour
 
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed);
 
-        boidPrefab.GetComponent<Rigidbody>().velocity = -transform.right * defaultSpeed;
+        boidPrefab.GetComponent<Rigidbody>().velocity = transform.forward * defaultSpeed;
     }
     private void OnDrawGizmosSelected()
     {
@@ -116,7 +116,7 @@ public class Boid : MonoBehaviour
 
         for (int i = -1; i <= 1; i++)
         {
-            Vector3 rayDirection = -transform.right + transform.forward * i;
+            Vector3 rayDirection = transform.forward + transform.right * i;
             Ray ray = new Ray(transform.position, rayDirection);
             Debug.DrawRay(transform.position, rayDirection);
             if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance))

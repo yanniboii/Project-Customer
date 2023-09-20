@@ -7,7 +7,7 @@ public class MessageUI : MonoBehaviour
 {
     public List<string> messages = new List<string>();
     TMP_Text message;
-    int messageIndex = 0;
+    public int messageIndex = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +16,7 @@ public class MessageUI : MonoBehaviour
 
     public void SetNewMessage()
     {
+
         message.text= messages[messageIndex];
-        messageIndex++;
     }
 }
