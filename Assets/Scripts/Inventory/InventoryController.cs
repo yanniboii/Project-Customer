@@ -27,7 +27,7 @@ public class InventoryController : MonoBehaviour
         }
         else if (inventoryIsOpen == false)
         {
-            //Cursor.lockState = CursorLockMode.Locked;
+            Cursor.lockState = CursorLockMode.Locked;
             //transform.GetComponent<PlayerMovement>().enabled = true;
             //transform.GetComponent<ThrowableSeeds>().enabled = true;
             //transform.GetComponent<GetWater>().enabled = true;

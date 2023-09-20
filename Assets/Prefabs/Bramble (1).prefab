@@ -295,7 +295,7 @@ MonoBehaviour:
   minGrow: 0.2
   maxGrow: 1
   moneyUI: {fileID: 0}
-  plant: 
+  plant: Bramble
   waterUI: {fileID: 2667472405603083468}
   money: 0
   isRed: 0

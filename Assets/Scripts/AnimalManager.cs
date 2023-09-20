@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class AnimalManager : MonoBehaviour
 {
-    public int fernAmount;
-    public int fatMAmount;
-    public int tallMAmount;
-    public int mushAmount;
+    public List<int> deerConditions = new List<int>();
+    public List<int> foxConditions = new List<int>();
+    public List<int> racoonConditions = new List<int>();
+    public List<int> crowConditions = new List<int>();
+    public List<int> plants = new List<int>();
+
+
 
     bool hasDeer;
     bool hasFox;
@@ -39,14 +42,14 @@ public class AnimalManager : MonoBehaviour
     {
 
         //Deer Conditions
-        if(fernAmount >= 2 && tallMAmount >= 2 && !hasDeer)
+        if (plants[0] >= deerConditions[0] && plants[1] >= deerConditions[1] && !hasDeer)
         {
             hasDeer = true; 
             deerBadge.SetAlpha(255f);
             Instantiate(deerGameObject, deerTransform);
         }
         //Bird Conditions
-        if(mushAmount >= 5 && fatMAmount >=5 && !hasBird)
+        if(plants[2] >= crowConditions[0] && plants[3] >= crowConditions[1] && !hasBird)
         {
             hasBird = true;
             crowBadge.SetAlpha(255f);
@@ -56,7 +59,7 @@ public class AnimalManager : MonoBehaviour
         }
 
         //fox Conditions
-        if (fernAmount >= 2 && tallMAmount >= 2 && !hasFox)
+        if (plants[4] >= foxConditions[0] && plants[5] >= foxConditions[1] && plants[6] >= foxConditions[2] && !hasFox)
         {
             hasFox = true;
             foxBadge.SetAlpha(255f);
@@ -64,7 +67,7 @@ public class AnimalManager : MonoBehaviour
         }
 
         //racoon Conditions
-        if (fernAmount >= 2 && tallMAmount >= 2 && !hasRacoon)
+        if (plants[7] >= racoonConditions[0] && plants[8] >= racoonConditions[1] && plants[9] >= racoonConditions[2] && !hasRacoon)
         {
             hasRacoon = true;
             racoonBadge.SetAlpha(255f);

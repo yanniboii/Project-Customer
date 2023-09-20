@@ -21,11 +21,16 @@ public class ThrowableSeeds : MonoBehaviour
 
     public bool isGrass = true;
     public bool isFern = false;
-    public bool isFatM = false;
-    public bool isMTall = false;
-    public bool isMTall2 = false;
     public bool isMush = false;
-    public bool isMush2 = false;
+    public bool isBerry = false;
+    public bool isBramble = false;
+    public bool isHolly = false;
+    public bool isLavender = false;
+    public bool isOak = false;
+    public bool isAsh = false;
+    public bool isHazel = false;
+
+    MessageUI messageUI;
 
     public int GetSeedNumbers()
     {
@@ -33,6 +38,7 @@ public class ThrowableSeeds : MonoBehaviour
     }
     private void Start()
     {
+        messageUI = FindObjectOfType<MessageUI>();
         readyToThrow = true;
     }
 
@@ -42,13 +48,19 @@ public class ThrowableSeeds : MonoBehaviour
         if (Input.GetKeyDown(throwKey) && readyToThrow && totalThrows > 0)
         {
             Throw();
+
         }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             SetEveryPlantFalse();
             isGrass = true;
+            if(messageUI.messageIndex == 0)
+            {
+                messageUI.messageIndex++;
+                messageUI.SetNewMessage();
+            }
         }
-        if(Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             SetEveryPlantFalse();
             isFern = true;
@@ -56,22 +68,42 @@ public class ThrowableSeeds : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             SetEveryPlantFalse();
-            isFatM = true;
+            isMush = true;
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             SetEveryPlantFalse();
-            isMTall = true;
+            isBerry = true;
         }
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             SetEveryPlantFalse();
-            isMush = true;
+            isBramble = true;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Alpha6))
         {
-            isGrass = false;
-            isFern = false;
+            SetEveryPlantFalse();
+            isHolly = true;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            SetEveryPlantFalse();
+            isLavender = true;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha8))
+        {
+            SetEveryPlantFalse();
+            isOak = true;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha9))
+        {
+            SetEveryPlantFalse();
+            isAsh = true;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            SetEveryPlantFalse();
+            isHazel = true;
         }
     }
 
@@ -79,16 +111,28 @@ public class ThrowableSeeds : MonoBehaviour
     {
         isGrass = false;
         isFern = false;
-        isFatM = false;
-        isMTall = false;
-        isMTall2 = false;
         isMush = false;
-        isMush2 = false;
+        isBerry = false;
+        isBramble = false;
+        isHolly = false;
+        isLavender = false;
+        isOak = false;
+        isAsh = false;
+        isHazel = false;
+        if(messageUI.messageIndex== 5)
+        {
+            messageUI.messageIndex++;
+            messageUI.SetNewMessage();
+        }
     }
     private void Throw()
     {
         readyToThrow = false;
-
+        if (messageUI.messageIndex == 1)
+        {
+            messageUI.messageIndex++;
+            messageUI.SetNewMessage();
+        }
         //initializing throwable object
         GameObject throwable = Instantiate(objectToThrow, attackPoint.position, cam.rotation);
 

@@ -11,6 +11,8 @@ public class GetWater : MonoBehaviour
     ThrowableSeeds throwableSeeds;
     RemovePlant removePlant;
 
+    MessageUI messageUI;
+
     GameObject waterCan;
 
 
@@ -20,6 +22,7 @@ public class GetWater : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        messageUI = FindObjectOfType<MessageUI>();
         throwableSeeds= FindObjectOfType<ThrowableSeeds>();
         removePlant = FindObjectOfType<RemovePlant>();
     }
@@ -46,6 +49,11 @@ public class GetWater : MonoBehaviour
             }
             else
             {
+                if(messageUI.messageIndex == 2)
+                {
+                    messageUI.messageIndex++;
+                    messageUI.SetNewMessage();
+                }
                 removePlant.DestroyShovel();
                 throwableSeeds.enabled = false;
                 waterCan = Instantiate(wateringCan, equipTransform);
@@ -58,10 +66,16 @@ public class GetWater : MonoBehaviour
         {
             if (Physics.Raycast(cam.position, cam.forward, out hit, 500f))
             {
+
                 if (water <= 1)
                 {
                     if (hit.collider.CompareTag("Water"))
                     {
+                        if (messageUI.messageIndex == 3)
+                        {
+                            messageUI.messageIndex++;
+                            messageUI.SetNewMessage();
+                        }
                         Debug.Log(water);
                         water += 0.001f;
                         waterUI.SetWater(water);
@@ -71,6 +85,11 @@ public class GetWater : MonoBehaviour
                 {
                     if (hit.collider.CompareTag("Plant"))
                     {
+                        if (messageUI.messageIndex == 4)
+                        {
+                            messageUI.messageIndex++;
+                            messageUI.SetNewMessage();
+                        }
                         Debug.Log("Plant");
                         water -= 0.001f;
                         waterUI.SetWater(water);

@@ -142,19 +142,43 @@ public class GrowPlantScript : MonoBehaviour
             fullyGrown = true;
             if (plant == "Fern")
             {
-                animalManager.fernAmount += 1;
+                animalManager.plants[1] += 1;
             }
-            else if(plant == "TallM")
+            else if(plant == "Grass")
             {
-                animalManager.tallMAmount+= 1;
+                animalManager.plants[0] += 1;
             }
-            else if (plant == "FatM")
+            else if (plant == "Mushroom")
             {
-                animalManager.fatMAmount         += 1;
+                animalManager.plants[2]         += 1;
             }
-            else if (plant == "Mush")
+            else if (plant == "Berry")
             {
-                animalManager.mushAmount += 1;
+                animalManager.plants[3] += 1;
+            }
+            else if (plant == "Bramble")
+            {
+                animalManager.plants[4] += 1;
+            }
+            else if (plant == "Holly")
+            {
+                animalManager.plants[5] += 1;
+            }
+            else if (plant == "Lavender")
+            {
+                animalManager.plants[6] += 1;
+            }
+            else if (plant == "Oak")
+            {
+                animalManager.plants[7] += 1;
+            }
+            else if (plant == "Ash")
+            {
+                animalManager.plants[8] += 1;
+            }
+            else if (plant == "Hazel")
+            {
+                animalManager.plants[9] += 1;
             }
             fullyGrownGO.SetActive(false);
             moneyUI.money += money;
