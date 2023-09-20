@@ -1,9 +1,34 @@
 fileFormatVersion: 2
-guid: 5e57bcaf7d4be5241bbacb9371e8a643
+guid: 969af67da2ea6d944a9f93cb798bc739
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MushBeige
+    second: {fileID: 2100000, guid: d6b08b2e06deaf44aa087114207bdf94, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MushBrown
+    second: {fileID: 2100000, guid: d235a48f3694ba24e8962c66bb82097f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MushPink
+    second: {fileID: 2100000, guid: 68e637e1cfbfd0b40be623a0fd755118, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MushRed
+    second: {fileID: 2100000, guid: 9ba52634049694f47b115019d3cfbd51, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MushWhite
+    second: {fileID: 2100000, guid: 700ad6b3fcddfeb449f6e7638677bd94, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

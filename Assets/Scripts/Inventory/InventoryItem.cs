@@ -9,11 +9,12 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     [Header("UI")]
     public Image image;
 
-    [HideInInspector] public Transform parentAfterDrag;
+    [HideInInspector] public Transform parentAfterDrag; 
     //drag 'n drop
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        Debug.Log("start drag");
         image.raycastTarget = false;
         parentAfterDrag = transform.parent;
         transform.SetParent(transform.root);
@@ -21,11 +22,13 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnDrag(PointerEventData eventData)
     {
+        Debug.Log("dragging");
         transform.position = Input.mousePosition;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        Debug.Log("end drag");
         image.raycastTarget = true;
         transform.SetParent(parentAfterDrag);
     }
