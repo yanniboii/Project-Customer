@@ -1,24 +1,9 @@
 fileFormatVersion: 2
-guid: ec95e5cd5403d1d448dd96a61ce23594
+guid: 4c072de803f3752459ee535912051952
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Berries.001
-    second: {fileID: 2100000, guid: 712202d05c593e74280394e6eb2160eb, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Leaves.005
-    second: {fileID: 2100000, guid: 30b7dd9c84460d24a9109ea658dfa483, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Stengel.001
-    second: {fileID: 2100000, guid: 5b7ea2e2fb225064f9030b16d182050a, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
