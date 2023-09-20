@@ -53,7 +53,7 @@ public class AnimalManager : MonoBehaviour
         {
             hasBird = true;
             crowBadge.SetAlpha(255f);
-            boids.boidAmount = 20;
+            boids.boidAmount = 200;
             boids.spawnRange= 5;
             boids.SpawnBoids();
         }
