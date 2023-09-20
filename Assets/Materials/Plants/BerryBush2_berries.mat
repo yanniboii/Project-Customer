@@ -35,10 +35,18 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _AOMap:
-        m_Texture: {fileID: 2800000, guid: a9f1931223a85d44682c4bdad0615c24, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5d5c6923cd6e5a74288c8bf982bb7927, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Albedo_Texture:
+        m_Texture: {fileID: 2800000, guid: 62a8e59ee10193a4984240f3cf9a6cde, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: 6a15b895cca15ca40aac81e1553cbe5f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SmoothnessMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -60,17 +68,20 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AOInt: 0
+    - _AOInt: -1
     - _Clip: 0
     - _Grow: 0
-    - _NormalInfluence: 0.1
+    - _NormalInfluence: 1.3
+    - _NormalStrength: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SSS_Intensity: 0.3
-    - _SSS_Power: 1
+    - _SSS_Intensity: 3
+    - _SSS_Power: 0.5
     - _Scale: 0
-    - _Smoothness: 0
+    - _Smoothness: 0.3
+    - _UseSmMap: 0
+    - _test: 0
     m_Colors:
-    - _BaseColor: {r: 0.31764707, g: 0.4117647, b: 0.7372549, a: 0}
-    - _SSS_Color: {r: 0.21176471, g: 0.27058825, b: 0.36862746, a: 0}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 0}
+    - _SSS_Color: {r: 0.8113208, g: 0.31167966, b: 0.11863652, a: 0}
   m_BuildTextureStacks: []

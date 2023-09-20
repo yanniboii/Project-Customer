@@ -50,10 +50,10 @@ Material:
     - _AOInt: 1
     - _Clip: 0
     - _Grow: 0
-    - _NormalInfluence: 0.1
+    - _NormalInfluence: 2
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SSS_Intensity: 0.2
+    - _SSS_Intensity: 2
     - _SSS_Power: 1
     - _Scale: 0
     - _Smoothness: 0
