@@ -106,7 +106,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   nextPoint: {x: 0, y: 0, z: 0}
-  nextPointRange: 0
+  nextPointRange: 10
 --- !u!195 &432313531826748675
 NavMeshAgent:
   m_ObjectHideFlags: 0
