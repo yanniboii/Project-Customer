@@ -210,7 +210,7 @@ MonoBehaviour:
   moneyUI: {fileID: 0}
   plant: Berry
   waterUI: {fileID: 542309926977673421}
-  money: 0
+  money: 35
   isRed: 0
   fullyGrownGO: {fileID: 6707004240267066388}
   redGO: {fileID: 3793566782172930075}

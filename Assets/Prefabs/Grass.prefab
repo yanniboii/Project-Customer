@@ -289,7 +289,7 @@ MonoBehaviour:
   moneyUI: {fileID: 0}
   plant: Grass
   waterUI: {fileID: 9154685963974747546}
-  money: 0
+  money: 5
   isRed: 0
   fullyGrownGO: {fileID: 3860149122530413513}
   redGO: {fileID: 1751482718335078304}

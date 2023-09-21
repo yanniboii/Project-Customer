@@ -127,7 +127,7 @@ MonoBehaviour:
   alignmentWheight: 105.9
   cohesionWeight: 111.5
   avoidWeight: 5e+20
-  defaultSpeed: 24.96
+  defaultSpeed: 13.07
   rotationSpeed: 0.1
 --- !u!64 &-1611340290777131937
 MeshCollider:

@@ -122,9 +122,9 @@ MonoBehaviour:
   minGrow: 0.2
   maxGrow: 1
   moneyUI: {fileID: 0}
-  plant: 
+  plant: Birch
   waterUI: {fileID: 2231955153313604391}
-  money: 0
+  money: 15
   isRed: 0
   fullyGrownGO: {fileID: 9179285811730409438}
   redGO: {fileID: 8699438876187045910}

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5658870932712227856}
   - component: {fileID: 4496790507839905341}
   - component: {fileID: 4309338703912786807}
+  - component: {fileID: -1796378109119076678}
+  - component: {fileID: 432313531826748675}
   m_Layer: 0
   m_Name: polySurface1
   m_TagString: Untagged
@@ -87,3 +89,43 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-1796378109119076678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7729753276839894984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 993438cc9946cbd4b8abb83af4933d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 432313531826748675}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 128
+  nextPoint: {x: 0, y: 0, z: 0}
+  nextPointRange: 0
+--- !u!195 &432313531826748675
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7729753276839894984}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.012342135
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.024149686
+  m_BaseOffset: 0.012074843
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
