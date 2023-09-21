@@ -8,7 +8,7 @@ public class GetWater : MonoBehaviour
     [SerializeField] WaterUI waterUI;
     [SerializeField] GameObject wateringCan;
     [SerializeField] Transform equipTransform;
-    ThrowableSeeds throwableSeeds;
+    public ThrowableSeeds throwableSeeds;
     RemovePlant removePlant;
 
     MessageUI messageUI;
@@ -23,9 +23,7 @@ public class GetWater : MonoBehaviour
     void Start()
     {
         messageUI = FindObjectOfType<MessageUI>();
-        throwableSeeds= FindObjectOfType<ThrowableSeeds>();
         removePlant = FindObjectOfType<RemovePlant>();
-        throwableSeeds.enabled = false;
     }
 
     public void DestroyWateringCan()
