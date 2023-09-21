@@ -8,9 +8,6 @@ public class ThrowableAddons : MonoBehaviour
     private Rigidbody rb;
     private bool targetHit;
     public List<GameObject> plants= new List<GameObject>();
-
-
-
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
