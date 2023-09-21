@@ -12,12 +12,14 @@ public class InventoryController : MonoBehaviour
     PlayerMovement playerMovement;
     ThrowableSeeds throwableSeeds;
     GetWater getWater;
+    PlayerCam playerCam;
 
     private void Start()
     {
         playerMovement = FindObjectOfType<PlayerMovement>();
         throwableSeeds = FindObjectOfType<ThrowableSeeds>();
         getWater = FindObjectOfType<GetWater>();
+        playerCam= FindObjectOfType<PlayerCam>();
     }
 
     // Update is called once per frame
@@ -27,21 +29,29 @@ public class InventoryController : MonoBehaviour
         {
             inventoryIsOpen = !inventoryIsOpen;
             Inventory.SetActive(inventoryIsOpen);
+            Debug.Log("Inventory Is Open: " + inventoryIsOpen);
         }
 
-        if(inventoryIsOpen == true)
+        if (inventoryIsOpen == true)
         {
+            Debug.Log("Inventory is open - Cursor visible");
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            playerCam.enabled = false;
             playerMovement.enabled = false;
             throwableSeeds.enabled = false;
             getWater.enabled = false;
         }
         else if (inventoryIsOpen == false)
         {
+            Debug.Log("Inventory is closed - Cursor locked");
             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            playerCam.enabled = true;
             playerMovement.enabled = true;
             throwableSeeds.enabled = true;
             getWater.enabled = true;
         }
+
     }
 }
