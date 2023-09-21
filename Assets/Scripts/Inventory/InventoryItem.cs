@@ -8,6 +8,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 {
     [Header("UI")]
     public Image image;
+    public int itemNumber;
 
     [HideInInspector] public Transform parentAfterDrag; 
     //drag 'n drop
@@ -18,6 +19,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         image.raycastTarget = false;
         parentAfterDrag = transform.parent;
         transform.SetParent(transform.root);
+        transform.SetAsLastSibling();
     }
 
     public void OnDrag(PointerEventData eventData)

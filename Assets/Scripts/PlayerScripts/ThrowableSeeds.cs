@@ -19,7 +19,7 @@ public class ThrowableSeeds : MonoBehaviour
     public float throwUpwardForce;
     bool readyToThrow;
 
-    public bool isGrass = true;
+    public bool isGrass = false;
     public bool isFern = false;
     public bool isMush = false;
     public bool isBerry = false;
@@ -64,7 +64,7 @@ public class ThrowableSeeds : MonoBehaviour
             Throw();
 
         }
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        /*if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             SetEveryPlantFalse();
             isGrass = true;
@@ -118,10 +118,10 @@ public class ThrowableSeeds : MonoBehaviour
         {
             SetEveryPlantFalse();
             isHazel = true;
-        }
+        }*/
     }
 
-    void SetEveryPlantFalse()
+    public void SetEveryPlantFalse()
     {
         isGrass = false;
         isFern = false;
