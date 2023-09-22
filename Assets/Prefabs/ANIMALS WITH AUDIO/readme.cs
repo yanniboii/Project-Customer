@@ -1,0 +1,1 @@
+//i think it's most efficient to just copy the Audio Source and Intermittent Random Sounds Components to the animals you already have set up
