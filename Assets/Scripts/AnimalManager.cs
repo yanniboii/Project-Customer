@@ -42,24 +42,24 @@ public class AnimalManager : MonoBehaviour
     {
 
         //Deer Conditions
-        if (plants[0] >= deerConditions[0] && plants[1] >= deerConditions[1] && !hasDeer)
+        if (plants[2] >= deerConditions[0] && plants[1] >= deerConditions[1] && plants[8] >= deerConditions[2] && !hasDeer)
         {
             hasDeer = true; 
             deerBadge.SetAlpha(255f);
             Instantiate(deerGameObject, deerTransform);
         }
         //Bird Conditions
-        if(plants[2] >= crowConditions[0] && plants[3] >= crowConditions[1] && !hasBird)
+        if(plants[6] >= crowConditions[0] && plants[5] >= crowConditions[1] && plants[9] >= crowConditions[2] && !hasBird)
         {
             hasBird = true;
             crowBadge.SetAlpha(255f);
-            boids.boidAmount = 20;
+            boids.boidAmount = 200;
             boids.spawnRange= 5;
             boids.SpawnBoids();
         }
 
         //fox Conditions
-        if (plants[4] >= foxConditions[0] && plants[5] >= foxConditions[1] && plants[6] >= foxConditions[2] && !hasFox)
+        if (plants[10] >= foxConditions[0] && plants[3] >= foxConditions[1] && plants[7] >= foxConditions[2] && !hasFox)
         {
             hasFox = true;
             foxBadge.SetAlpha(255f);
@@ -67,7 +67,7 @@ public class AnimalManager : MonoBehaviour
         }
 
         //racoon Conditions
-        if (plants[7] >= racoonConditions[0] && plants[8] >= racoonConditions[1] && plants[9] >= racoonConditions[2] && !hasRacoon)
+        if (plants[0] >= racoonConditions[0] && plants[4] >= racoonConditions[1] && plants[11] >= racoonConditions[2] && !hasRacoon)
         {
             hasRacoon = true;
             racoonBadge.SetAlpha(255f);

@@ -29,6 +29,20 @@ public class ThrowableSeeds : MonoBehaviour
     public bool isOak = false;
     public bool isAsh = false;
     public bool isHazel = false;
+    public bool isBirch = false;
+    public bool isMoss = false;
+
+
+
+    public bool fernUnlocked = false;
+    public bool mushUnlocked = false;
+    public bool berryUnlocked = false;
+    public bool hollyUnlocked = false;
+    public bool lavenderUnlocked = false;
+    public bool oakUnlocked = false;
+    public bool ashUnlocked = false;
+    public bool hazelUnlocked = false;
+    public bool mossUnlocked = false;
 
     MessageUI messageUI;
 
@@ -60,17 +74,17 @@ public class ThrowableSeeds : MonoBehaviour
                 messageUI.SetNewMessage();
             }
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2) && fernUnlocked)
         {
             SetEveryPlantFalse();
             isFern = true;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Alpha3) && mushUnlocked)
         {
             SetEveryPlantFalse();
             isMush = true;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.Alpha4) && berryUnlocked)
         {
             SetEveryPlantFalse();
             isBerry = true;
@@ -80,27 +94,27 @@ public class ThrowableSeeds : MonoBehaviour
             SetEveryPlantFalse();
             isBramble = true;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha6))
+        if (Input.GetKeyDown(KeyCode.Alpha6) && hollyUnlocked)
         {
             SetEveryPlantFalse();
             isHolly = true;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha7))
+        if (Input.GetKeyDown(KeyCode.Alpha7) && lavenderUnlocked)
         {
             SetEveryPlantFalse();
             isLavender = true;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha8))
+        if (Input.GetKeyDown(KeyCode.Alpha8) && oakUnlocked)
         {
             SetEveryPlantFalse();
             isOak = true;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha9))
+        if (Input.GetKeyDown(KeyCode.Alpha9) && ashUnlocked)
         {
             SetEveryPlantFalse();
             isAsh = true;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha0))
+        if (Input.GetKeyDown(KeyCode.Alpha0) && hazelUnlocked)
         {
             SetEveryPlantFalse();
             isHazel = true;

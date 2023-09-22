@@ -16,97 +16,66 @@ public class Hotbar : MonoBehaviour
         throwableSeeds = FindObjectOfType<ThrowableSeeds>();
     }
 
-    void CheckItem(int number)
+    void CheckItem(int slotNumber)
     {
+        if (inventorySlots[slotNumber].transform.childCount != 0)
+        {
+            int num = inventorySlots[slotNumber].GetComponentInChildren<InventoryItem>().itemNumber;
+            Debug.Log(inventorySlots[slotNumber].GetComponentInChildren<InventoryItem>().itemNumber);
+            throwableSeeds.SetEveryPlantFalse(); // Reset all plant variables
 
-            if (inventorySlots[number].transform.childCount != 0)
+            // Determine which plant type to set based on the slot number
+            switch (num)
             {
-                switch(inventoryItems.Count) 
-                {
-                    case 0:
-                        {
-                            throwableSeeds.SetEveryPlantFalse();
-                            throwableSeeds.isGrass = true;
-                            break;
-                        }
-                    case 1:
-                        {
-                            throwableSeeds.SetEveryPlantFalse();
-                            throwableSeeds.isFern = true;
-                            break;
-                        }
-                    case 2:
-                        {
-                            throwableSeeds.SetEveryPlantFalse();
-                            throwableSeeds.isMush = true;
-                            break;
-                        }
-                    case 3:
-                        {
-                            throwableSeeds.SetEveryPlantFalse();
-                            throwableSeeds.isBerry = true;
-                            break;
-                        }
-                    case 4:
-                        {
-                            throwableSeeds.SetEveryPlantFalse();
-                            throwableSeeds.isBramble = true;
-                            break;
-                        }
-                    case 5:
-                        {
-                            throwableSeeds.SetEveryPlantFalse();
-                            throwableSeeds.isHolly = true;
-                            break;
-                        }
-                    case 6:
-                        {
-                            throwableSeeds.SetEveryPlantFalse();
-                            throwableSeeds.isLavender = true;
-                            break;
-                        }
-                    case 7:
-                        {
-                            throwableSeeds.SetEveryPlantFalse();
-                            throwableSeeds.isOak = true;
-                            break;
-                        }
-                    case 8:
-                        {
-                            throwableSeeds.SetEveryPlantFalse();
-                            throwableSeeds.isAsh = true;
-                            break;
-                        }
-                    case 9:
-                        {
-                            throwableSeeds.SetEveryPlantFalse();
-                            throwableSeeds.isHazel = true;
-                            break;
-                        }
-                    /*case 10:
-                        {
-                            throwableSeeds.SetEveryPlantFalse();
-                            throwableSeeds.isBirch = true;
-                            break;
-                        }
-                    case 11:
-                        {
-                            throwableSeeds.SetEveryPlantFalse();
-                            throwableSeeds.isMoss = true;
-                            break;
-                        }*/
-
-                
+                case 0:
+                    throwableSeeds.isGrass = true;
+                    break;
+                case 1:
+                    throwableSeeds.isFern = true;
+                    break;
+                case 2:
+                    throwableSeeds.isMush = true;
+                    break;
+                case 3:
+                    throwableSeeds.isBerry = true;
+                    break;
+                case 4:
+                    throwableSeeds.isBramble = true;
+                    break;
+                case 5:
+                    throwableSeeds.isHolly = true;
+                    break;
+                case 6:
+                    throwableSeeds.isLavender = true;
+                    break;
+                case 7:
+                    throwableSeeds.isOak = true;
+                    break;
+                case 8:
+                    throwableSeeds.isAsh = true;
+                    break;
+                case 9:
+                    throwableSeeds.isHazel = true;
+                    break;
+                case 10:
+                    throwableSeeds.isBirch= true;
+                    break;
+                case 11:
+                    throwableSeeds.isMoss= true;
+                    break;
+                    /* Add more cases for additional slots if needed */
             }
         }
-
     }
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
+            Debug.Log("Hi");
+
             CheckItem(0);
+
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {

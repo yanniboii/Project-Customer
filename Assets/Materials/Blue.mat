@@ -84,7 +84,7 @@ Material:
     - _BumpScale: 1
     - _CellDensity: 11.96
     - _CellSize: 2.29
-    - _CellSpeed: 0.4
+    - _CellSpeed: 3.4
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2

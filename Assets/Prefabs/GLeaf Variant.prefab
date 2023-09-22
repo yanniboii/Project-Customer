@@ -545,7 +545,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3c6a8dcfe52a6ce4193364d644055784,
         type: 3}
       propertyPath: m_Name
-      value: GLeaf
+      value: GLeaf Variant
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3c6a8dcfe52a6ce4193364d644055784,
         type: 3}
@@ -605,14 +605,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   growMeshes:
   - {fileID: 4999768050692396737}
-  timeToGrow: 5
+  timeToGrow: 20
   refreshRate: 0.05
   minGrow: 0.007
   maxGrow: 1
   moneyUI: {fileID: 0}
   plant: Fern
   waterUI: {fileID: 5847143983475392779}
-  money: 12
+  money: 70
   isRed: 0
   fullyGrownGO: {fileID: 3285910378580704754}
   redGO: {fileID: 6873222322073521479}

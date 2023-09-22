@@ -13,8 +13,11 @@ public class InventoryController : MonoBehaviour
     PlayerMovement playerMovement;
     ThrowableSeeds throwableSeeds;
     GetWater getWater;
+    PlayerCam playerCam;
+
     private void Start()
     {
+        playerCam = FindObjectOfType<PlayerCam>();
         playerMovement = FindObjectOfType<PlayerMovement>();
         throwableSeeds = FindObjectOfType<ThrowableSeeds>();
         getWater = FindObjectOfType<GetWater>();  
@@ -34,14 +37,16 @@ public class InventoryController : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             playerMovement.enabled = false;
+            playerCam.enabled = false;
             throwableSeeds.enabled = false;
             getWater.enabled = false;
         }
         else if (inventoryIsOpen == false)
         {
-            /*Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.visible = false;
             playerMovement.enabled = true;
+            playerCam.enabled = true;
             throwableSeeds.enabled = true;
             getWater.enabled = true;*/
             

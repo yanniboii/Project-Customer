@@ -103,14 +103,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   growMeshes:
   - {fileID: 5449787983129378999}
-  timeToGrow: 5
+  timeToGrow: 10
   refreshRate: 0.05
   minGrow: 0.2
   maxGrow: 1
   moneyUI: {fileID: 0}
   plant: Lavender
   waterUI: {fileID: 7686073814752413471}
-  money: 0
+  money: 15
   isRed: 0
   fullyGrownGO: {fileID: 8453220306069354674}
   redGO: {fileID: 5875558170243788652}

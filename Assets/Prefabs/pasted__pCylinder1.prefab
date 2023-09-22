@@ -287,14 +287,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   growMeshes:
   - {fileID: 7813254209208818477}
-  timeToGrow: 5
+  timeToGrow: 20
   refreshRate: 0.05
   minGrow: 0.2
   maxGrow: 1
   moneyUI: {fileID: 0}
   plant: Oak
   waterUI: {fileID: 3582471454058269496}
-  money: 0
+  money: 50
   isRed: 0
   fullyGrownGO: {fileID: 555540791155759058}
   redGO: {fileID: 6205305299314575410}
