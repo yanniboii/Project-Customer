@@ -116,7 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   growMeshes:
   - {fileID: 4714824070932905351}
-  timeToGrow: 5
+  timeToGrow: 10
   refreshRate: 0.05
   minGrow: 0.2
   maxGrow: 1

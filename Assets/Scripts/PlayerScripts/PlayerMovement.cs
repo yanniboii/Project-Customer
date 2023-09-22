@@ -53,10 +53,7 @@ public class PlayerMovement : MonoBehaviour
             rb.drag = groundDrag;
         else
             rb.drag = 0;
-        if (Input.GetKey(KeyCode.Space))
-        {
-            Cursor.lockState = CursorLockMode.None;
-        }
+
     }
     private void FixedUpdate()
     {

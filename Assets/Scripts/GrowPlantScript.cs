@@ -180,6 +180,14 @@ public class GrowPlantScript : MonoBehaviour
             {
                 animalManager.plants[9] += 1;
             }
+            else if(plant == "Moss")
+            {
+                animalManager.plants[10] += 1;
+            }
+            else if (plant == "Birch")
+            {
+                animalManager.plants[11] += 1;
+            }
             fullyGrownGO.SetActive(false);
             moneyUI.money += money;
 

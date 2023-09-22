@@ -14,10 +14,11 @@ public class ButtonUI : MonoBehaviour
         throwableSeeds = FindObjectOfType<ThrowableSeeds>();
     }
 
-    public void UnlockLavender()
+    public void UnlockLavender(InventoryItem inventoryItem)
     {
         if (moneyUI.money >= 25 && !throwableSeeds.lavenderUnlocked)
         {
+            inventoryItem.transform.gameObject.SetActive(true);
             throwableSeeds.lavenderUnlocked = true;
             moneyUI.money -= 25;
             Image childImage = null;
@@ -36,10 +37,11 @@ public class ButtonUI : MonoBehaviour
             }
         }
     }
-    public void UnlockMoss()
+    public void UnlockMoss(InventoryItem inventoryItem)
     {
         if (moneyUI.money >= 60 && !throwableSeeds.mossUnlocked)
         {
+            inventoryItem.transform.gameObject.SetActive(true);
             throwableSeeds.mossUnlocked = true;
             moneyUI.money -= 60;
             Image childImage = null;
@@ -59,10 +61,11 @@ public class ButtonUI : MonoBehaviour
             }
         }
     }
-    public void UnlockMushroom()
+    public void UnlockMushroom(InventoryItem inventoryItem)
     {
         if (moneyUI.money >= 130 && !throwableSeeds.mushUnlocked)
         {
+            inventoryItem.transform.gameObject.SetActive(true);
             throwableSeeds.mushUnlocked = true;
             moneyUI.money -= 130;
             Image childImage = null;
@@ -82,10 +85,11 @@ public class ButtonUI : MonoBehaviour
             }
         }
     }
-    public void UnlockHolly()
+    public void UnlockHolly(InventoryItem inventoryItem)
     {
         if (moneyUI.money >= 45 && !throwableSeeds.hollyUnlocked)
         {
+            inventoryItem.transform.gameObject.SetActive(true);
             throwableSeeds.hollyUnlocked = true;
             moneyUI.money -= 45;
             Image childImage = null;
@@ -105,10 +109,11 @@ public class ButtonUI : MonoBehaviour
             }
         }
     }
-    public void UnlockBerry()
+    public void UnlockBerry(InventoryItem inventoryItem)
     {
         if (moneyUI.money >= 80 && !throwableSeeds.berryUnlocked)
         {
+            inventoryItem.transform.gameObject.SetActive(true);
             throwableSeeds.berryUnlocked = true;
             moneyUI.money -= 80;
             Image childImage = null;
@@ -128,10 +133,11 @@ public class ButtonUI : MonoBehaviour
             }
         }
     }
-    public void UnlockFern()
+    public void UnlockFern(InventoryItem inventoryItem)
     {
         if (moneyUI.money >= 200 && !throwableSeeds.fernUnlocked)
         {
+            inventoryItem.transform.gameObject.SetActive(true);
             throwableSeeds.fernUnlocked = true;
             moneyUI.money -= 200;
             Image childImage = null;
@@ -151,10 +157,11 @@ public class ButtonUI : MonoBehaviour
             }
         }
     }
-    public void UnlockHazel()
+    public void UnlockHazel(InventoryItem inventoryItem)
     {
         if (moneyUI.money >= 60 && !throwableSeeds.hazelUnlocked)
         {
+            inventoryItem.transform.gameObject.SetActive(true);
             throwableSeeds.hazelUnlocked = true;
             moneyUI.money -= 60;
             Image childImage = null;
@@ -174,10 +181,11 @@ public class ButtonUI : MonoBehaviour
             }
         }
     }
-    public void UnlockOak()
+    public void UnlockOak(InventoryItem inventoryItem)
     {
         if (moneyUI.money >= 100 && !throwableSeeds.oakUnlocked)
         {
+            inventoryItem.transform.gameObject.SetActive(true);
             throwableSeeds.oakUnlocked = true;
             moneyUI.money -= 100;
             Image childImage = null;
@@ -197,10 +205,11 @@ public class ButtonUI : MonoBehaviour
             }
         }
     }
-    public void UnlockAsh()
+    public void UnlockAsh(InventoryItem inventoryItem)
     {
         if (moneyUI.money >= 300 && !throwableSeeds.ashUnlocked)
         {
+            inventoryItem.transform.gameObject.SetActive(true);
             throwableSeeds.ashUnlocked = true;
             moneyUI.money -= 300;
             Image childImage = null;
