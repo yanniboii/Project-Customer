@@ -5,14 +5,20 @@ using UnityEngine.UI;
 
 public class WaterUI : MonoBehaviour
 {
-    [SerializeField]Slider slider;
+    [SerializeField]Image waterGO;
+    [SerializeField] Image noWater;
 
     public void SetWater(float water)
     {
-        slider.value = water;
-    }
-    public void SetMaxWater(float water)
-    {
-        slider.maxValue = water;
+        if(water > 0)
+        {
+            waterGO.enabled = true;
+            noWater.enabled = false;
+        }
+        else
+        {
+            waterGO.enabled =  false;
+            noWater.enabled = true;
+        }
     }
 }

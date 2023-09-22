@@ -5,7 +5,7 @@ using UnityEngine;
 public class GetWater : MonoBehaviour
 {
     public Transform cam;
-    [SerializeField] WaterUI waterUI;
+    [SerializeField] WaterUIPlayer waterUI;
     [SerializeField] GameObject wateringCan;
     [SerializeField] Transform equipTransform;
     ThrowableSeeds throwableSeeds;
@@ -78,7 +78,7 @@ public class GetWater : MonoBehaviour
                             messageUI.SetNewMessage();
                         }
                         Debug.Log(water);
-                        water += 0.001f;
+                        water += 0.1f * Time.deltaTime;
                         waterUI.SetWater(water);
                     }
                 }
@@ -92,7 +92,7 @@ public class GetWater : MonoBehaviour
                             messageUI.SetNewMessage();
                         }
                         Debug.Log("Plant");
-                        water -= 0.001f;
+                        water -= 0.1f * Time.deltaTime;
                         waterUI.SetWater(water);
                         hit.collider.GetComponent<GrowPlantScript>().AddWater(0.001f);
                     }

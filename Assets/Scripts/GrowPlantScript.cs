@@ -38,6 +38,7 @@ public class GrowPlantScript : MonoBehaviour
     {
         moneyUI = FindObjectOfType<MoneyUI>();
         animalManager = FindObjectOfType<AnimalManager>();
+        waterUI = GetComponentInChildren<WaterUI>();
         for (int i = 0; i < growMeshes.Count; i++)
         {
             for (int j = 0; j < growMeshes[i].materials.Length; j++)
@@ -92,7 +93,7 @@ public class GrowPlantScript : MonoBehaviour
                 StartGrowing();
             }
             hasWater = true;
-            water -= 0.0001f;
+            water -= 0.001f * Time.deltaTime;
             waterUI.SetWater(this.water);
             startedGrowing = true;
         }
@@ -139,6 +140,7 @@ public class GrowPlantScript : MonoBehaviour
         }
         if (growValue >= maxGrow)
         {
+            waterUI.gameObject.SetActive(false);
             fullyGrown = true;
             if (plant == "Fern")
             {
@@ -189,6 +191,7 @@ public class GrowPlantScript : MonoBehaviour
                 animalManager.plants[11] += 1;
             }
             fullyGrownGO.SetActive(false);
+            
             moneyUI.money += money;
 
         }
