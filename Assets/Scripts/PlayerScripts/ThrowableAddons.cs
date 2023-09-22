@@ -91,6 +91,18 @@ public class ThrowableAddons : MonoBehaviour
                 plant.transform.position = this.gameObject.transform.position;
                 plant.transform.parent = collision.gameObject.transform;
             }
+            if (thisPlant.isMoss)
+            {
+                plant = Instantiate(plants[10]);
+                plant.transform.position = this.gameObject.transform.position;
+                plant.transform.parent = collision.gameObject.transform;
+            }
+            if (thisPlant.isBirch)
+            {
+                plant = Instantiate(plants[11]);
+                plant.transform.position = this.gameObject.transform.position;
+                plant.transform.parent = collision.gameObject.transform;
+            }
 
 
             Destroy(this.gameObject);

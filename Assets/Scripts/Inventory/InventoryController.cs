@@ -48,7 +48,7 @@ public class InventoryController : MonoBehaviour
             playerMovement.enabled = true;
             playerCam.enabled = true;
             throwableSeeds.enabled = true;
-            getWater.enabled = true;*/
+            getWater.enabled = true;
             
             if (getWater.hasWateringCan == false)
             {
