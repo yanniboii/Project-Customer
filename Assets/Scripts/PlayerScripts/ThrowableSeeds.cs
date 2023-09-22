@@ -133,6 +133,8 @@ public class ThrowableSeeds : MonoBehaviour
         isOak = false;
         isAsh = false;
         isHazel = false;
+        isMoss = false;
+        isBirch = false;
         if(messageUI.messageIndex== 5)
         {
             messageUI.messageIndex++;
