@@ -19,13 +19,8 @@ public class Hotbar : MonoBehaviour
     void CheckItem(int number)
     {
 
-            if (inventorySlots[number].transform.childCount == 0)
+            if (inventorySlots[number].transform.childCount != 0)
             {
-                /*if (inventorySlots[i].GetComponentInChildren<InventoryItem>().itemNumber == 1)
-                {
-                    throwableSeeds.SetEveryPlantFalse();
-                    throwableSeeds.isGrass = true;
-                }*/
                 switch(inventoryItems.Count) 
                 {
                     case 0:

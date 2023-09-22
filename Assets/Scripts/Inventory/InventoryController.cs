@@ -39,11 +39,28 @@ public class InventoryController : MonoBehaviour
         }
         else if (inventoryIsOpen == false)
         {
-            Cursor.lockState = CursorLockMode.Locked;
+            /*Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             playerMovement.enabled = true;
             throwableSeeds.enabled = true;
-            getWater.enabled = true;
+            getWater.enabled = true;*/
+            
+            if (getWater.hasWateringCan == false)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                playerMovement.enabled = true;
+                throwableSeeds.enabled = true;
+                getWater.enabled = true;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                playerMovement.enabled = true;
+                throwableSeeds.enabled = false;
+                getWater.enabled = true;
+            } 
         }
     }
 }
