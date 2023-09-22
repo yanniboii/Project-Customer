@@ -62,6 +62,11 @@ public class ThrowableSeeds : MonoBehaviour
         if (Input.GetKeyDown(throwKey) && readyToThrow && totalThrows > 0)
         {
             Throw();
+            if(messageUI.messageIndex == 1)
+            {
+                messageUI.messageIndex++;
+                messageUI.SetNewMessage();
+            }
 
         }
         /*if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -135,11 +140,7 @@ public class ThrowableSeeds : MonoBehaviour
         isHazel = false;
         isMoss = false;
         isBirch = false;
-        if(messageUI.messageIndex== 5)
-        {
-            messageUI.messageIndex++;
-            messageUI.SetNewMessage();
-        }
+
     }
     private void Throw()
     {

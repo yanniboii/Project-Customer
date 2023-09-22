@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Blue
-  m_Shader: {fileID: -6465566751694194690, guid: 0df181d51536c2d418bd200b4a4c7dfe,
+  m_Shader: {fileID: -6465566751694194690, guid: cc08feb7067311b438605900bd9a1932,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -79,6 +79,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AO: 0
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -89,6 +90,7 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
+    - _Depth_Color_Fade: 0
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -100,6 +102,7 @@ Material:
     - _GradientSpeed: 1
     - _Metallic: 0
     - _OcclusionStrength: 1
+    - _Opacity: 0
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -114,13 +117,16 @@ Material:
     - _Wave_Height: 1
     - _Wave_Scale: 1
     - _Wave_Speed: 1
+    - _Wave_Strength: 1
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 0.16212173, g: 0.59353495, b: 0.9339623, a: 1}
     - _CellColor: {r: 0.5613208, g: 0.77703184, b: 1, a: 0}
     - _Color: {r: 0.16212168, g: 0.59353495, b: 0.9339623, a: 1}
+    - _Deep_Color: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Shallow_Color: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Wave_Direction: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

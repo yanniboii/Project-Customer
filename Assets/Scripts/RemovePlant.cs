@@ -9,13 +9,15 @@ public class RemovePlant : MonoBehaviour
     GetWater getWater;
     [SerializeField] GameObject shovel;
     [SerializeField] Transform equipTransform;
+    MessageUI messageUI;
 
     GameObject shovelLocal;
 
-    bool hasShovel;
+    public bool hasShovel;
     // Start is called before the first frame update
     void Start()
     {
+        messageUI = FindObjectOfType<MessageUI>();
         throwableSeeds = FindObjectOfType<ThrowableSeeds>();
         getWater = FindObjectOfType<GetWater>();
     }
@@ -41,6 +43,11 @@ public class RemovePlant : MonoBehaviour
             }
             else
             {
+                if(messageUI.messageIndex == 6)
+                {
+                    messageUI.messageIndex++;
+                    messageUI.SetNewMessage();
+                }
                 getWater.DestroyWateringCan();
                 throwableSeeds.enabled = false;
                 shovelLocal = Instantiate(shovel, equipTransform);

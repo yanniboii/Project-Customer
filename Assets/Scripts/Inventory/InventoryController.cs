@@ -13,10 +13,15 @@ public class InventoryController : MonoBehaviour
     PlayerMovement playerMovement;
     ThrowableSeeds throwableSeeds;
     GetWater getWater;
+    RemovePlant removePlant;
     PlayerCam playerCam;
+    MessageUI messageUI;
+
 
     private void Start()
     {
+        messageUI = FindObjectOfType<MessageUI>();
+        removePlant = FindObjectOfType<RemovePlant>();
         playerCam = FindObjectOfType<PlayerCam>();
         playerMovement = FindObjectOfType<PlayerMovement>();
         throwableSeeds = FindObjectOfType<ThrowableSeeds>();
@@ -30,6 +35,16 @@ public class InventoryController : MonoBehaviour
         {
             inventoryIsOpen = !inventoryIsOpen;
             Inventory.SetActive(inventoryIsOpen);
+            if(messageUI.messageIndex== 0)
+            {
+                messageUI.messageIndex++;
+                messageUI.SetNewMessage();
+            }
+            if (messageUI.messageIndex == 5)
+            {
+                messageUI.messageIndex++;
+                messageUI.SetNewMessage();
+            }
         }
 
         if(inventoryIsOpen == true)
