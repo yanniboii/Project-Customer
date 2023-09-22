@@ -57,13 +57,13 @@ Material:
     - _GradientScale: 14.11
     - _GradientSpeed: 0.06
     - _Metallic: 0
-    - _Opacity: 0.5
+    - _Opacity: 0.45
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Shallow_Color: 0
-    - _Smoothness: 0
+    - _Smoothness: 0.6
     - _Transparency: 0.56
-    - _Wave_Height: 0.61
+    - _Wave_Height: 0.8
     - _Wave_Scale: 5
     - _Wave_Speed: 0.3
     - _Wave_Strength: 1
