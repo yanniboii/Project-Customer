@@ -119,11 +119,11 @@ MonoBehaviour:
   - {fileID: 8628710944089436238}
   timeToGrow: 20
   refreshRate: 0.05
-  minGrow: 0.2
+  minGrow: 0
   maxGrow: 1
   moneyUI: {fileID: 0}
   plant: Hazel
-  waterUI: {fileID: 5845582389668714474}
+  waterUI: {fileID: 0}
   money: 35
   isRed: 0
   fullyGrownGO: {fileID: 5827096414645045831}
@@ -358,17 +358,17 @@ PrefabInstance:
     - target: {fileID: 4568868911928036322, guid: 95743896c373b3f40a84bec5683ddf6c,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 271.1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4568868911928036322, guid: 95743896c373b3f40a84bec5683ddf6c,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 271.1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4568868911928036322, guid: 95743896c373b3f40a84bec5683ddf6c,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 271.1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4568868911928036322, guid: 95743896c373b3f40a84bec5683ddf6c,
         type: 3}
@@ -413,7 +413,7 @@ PrefabInstance:
     - target: {fileID: 4568868911928036322, guid: 95743896c373b3f40a84bec5683ddf6c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 324
+      value: 5.17
       objectReference: {fileID: 0}
     - target: {fileID: 4568868911928036322, guid: 95743896c373b3f40a84bec5683ddf6c,
         type: 3}
@@ -442,18 +442,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95743896c373b3f40a84bec5683ddf6c, type: 3}
---- !u!114 &5845582389668714474 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2239404311835573772, guid: 95743896c373b3f40a84bec5683ddf6c,
-    type: 3}
-  m_PrefabInstance: {fileID: 5623967259888478694}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f68f566461028a54f90124225f8e9767, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &8172830992862519812 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4568868911928036322, guid: 95743896c373b3f40a84bec5683ddf6c,

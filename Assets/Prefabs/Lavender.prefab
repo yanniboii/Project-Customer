@@ -28,9 +28,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5810053894124937570}
   m_LocalRotation: {x: -0.00000009735359, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 236.11107, y: 18.751894, z: 250.00755}
-  m_LocalScale: {x: 0.095848285, y: 0.095848285, z: 0.095848285}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 236.11107, y: 0, z: 250.00755}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5394889194858083057}
   - {fileID: 2818480112298645199}
@@ -105,11 +105,11 @@ MonoBehaviour:
   - {fileID: 5449787983129378999}
   timeToGrow: 10
   refreshRate: 0.05
-  minGrow: 0.2
+  minGrow: 0
   maxGrow: 1
   moneyUI: {fileID: 0}
   plant: Lavender
-  waterUI: {fileID: 7686073814752413471}
+  waterUI: {fileID: 0}
   money: 15
   isRed: 0
   fullyGrownGO: {fileID: 8453220306069354674}
@@ -122,10 +122,10 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5810053894124937570}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6976191071164304731, guid: 4c072de803f3752459ee535912051952, type: 3}
 --- !u!1 &5875558170243788652
@@ -446,15 +446,3 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 8482984211854145811}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7686073814752413471 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2239404311835573772, guid: 95743896c373b3f40a84bec5683ddf6c,
-    type: 3}
-  m_PrefabInstance: {fileID: 8482984211854145811}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f68f566461028a54f90124225f8e9767, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

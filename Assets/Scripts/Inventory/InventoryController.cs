@@ -46,6 +46,11 @@ public class InventoryController : MonoBehaviour
                 messageUI.SetNewMessage();
             }
         }
+        if(Input.GetKeyDown(KeyCode.Escape) && inventoryIsOpen)
+        {
+            inventoryIsOpen= false;
+            Inventory.SetActive(false);
+        }
 
         if(inventoryIsOpen == true)
         {
@@ -59,7 +64,6 @@ public class InventoryController : MonoBehaviour
         else if (inventoryIsOpen == false)
         {
             Cursor.lockState = CursorLockMode.Locked;
-            //Cursor.visible = false;
             playerMovement.enabled = true;
             playerCam.enabled = true;
             throwableSeeds.enabled = true;

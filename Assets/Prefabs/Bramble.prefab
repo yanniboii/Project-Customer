@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4233802957767956462}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 228.95644, y: 19.30452, z: 253.00449}
-  m_LocalScale: {x: 0.42, y: 0.44031158, z: 0.42}
+  m_LocalScale: {x: 44.58, y: 46.735935, z: 44.58}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6330433038432739015}
@@ -108,7 +108,7 @@ MonoBehaviour:
   maxGrow: 1
   moneyUI: {fileID: 0}
   plant: Bramble
-  waterUI: {fileID: 8623868837244840745}
+  waterUI: {fileID: 0}
   money: 0
   isRed: 0
   fullyGrownGO: {fileID: 5385854792506332278}
@@ -575,18 +575,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 7547423156603311397}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8623868837244840745 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2239404311835573772, guid: 95743896c373b3f40a84bec5683ddf6c,
-    type: 3}
-  m_PrefabInstance: {fileID: 7547423156603311397}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f68f566461028a54f90124225f8e9767, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8362834493120567224
 PrefabInstance:
   m_ObjectHideFlags: 0

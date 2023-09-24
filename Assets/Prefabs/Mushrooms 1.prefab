@@ -196,11 +196,11 @@ MonoBehaviour:
   - {fileID: 371731596360802836}
   timeToGrow: 15
   refreshRate: 0.05
-  minGrow: 0.2
+  minGrow: 0
   maxGrow: 1
   moneyUI: {fileID: 0}
   plant: Mushroom
-  waterUI: {fileID: 2980444571365891883}
+  waterUI: {fileID: 0}
   money: 45
   isRed: 0
   fullyGrownGO: {fileID: 1267893362784555202}
@@ -213,10 +213,10 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2173087541189690305}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1830797768943920831, guid: 969af67da2ea6d944a9f93cb798bc739, type: 3}
 --- !u!1 &6420099195069477944
@@ -582,18 +582,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 3913448652826124583}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2980444571365891883 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2239404311835573772, guid: 95743896c373b3f40a84bec5683ddf6c,
-    type: 3}
-  m_PrefabInstance: {fileID: 3913448652826124583}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f68f566461028a54f90124225f8e9767, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &6093397192109667555
 PrefabInstance:
   m_ObjectHideFlags: 0

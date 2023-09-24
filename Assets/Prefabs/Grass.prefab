@@ -284,11 +284,11 @@ MonoBehaviour:
   - {fileID: 2399829899172614240}
   timeToGrow: 5
   refreshRate: 0.05
-  minGrow: 0.2
+  minGrow: 0
   maxGrow: 1
   moneyUI: {fileID: 0}
   plant: Grass
-  waterUI: {fileID: 9154685963974747546}
+  waterUI: {fileID: 0}
   money: 5
   isRed: 0
   fullyGrownGO: {fileID: 3860149122530413513}
@@ -443,15 +443,3 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 6924297870926928790}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9154685963974747546 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2239404311835573772, guid: 95743896c373b3f40a84bec5683ddf6c,
-    type: 3}
-  m_PrefabInstance: {fileID: 6924297870926928790}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f68f566461028a54f90124225f8e9767, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
