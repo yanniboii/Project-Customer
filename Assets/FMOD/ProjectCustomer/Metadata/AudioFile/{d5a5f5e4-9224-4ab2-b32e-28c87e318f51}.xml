@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{d5a5f5e4-9224-4ab2-b32e-28c87e318f51}">
+		<property name="assetPath">
+			<value>forest_calmloop.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>153.98400000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2e3b7b9b-b1d9-44c4-96cf-029092ad46f4}</destination>
+		</relationship>
+	</object>
+</objects>
