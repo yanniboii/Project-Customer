@@ -106,6 +106,9 @@
 			<destination>{f3be5528-e21c-4673-8a04-5b889a2e136a}</destination>
 			<destination>{36ec0f69-2558-4e66-aad8-d4e768794cb9}</destination>
 		</relationship>
+		<relationship name="playPercentages">
+			<destination>{bd6ca933-132b-4f40-b923-1408d28b6586}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{f64d5592-a2d5-4047-baa6-e3e0fd631c1e}">
 		<property name="name">
@@ -133,7 +136,7 @@
 			<value>pitch</value>
 		</property>
 		<property name="amount">
-			<value>11</value>
+			<value>10</value>
 		</property>
 	</object>
 	<object class="SingleSound" id="{a5cb26fb-e703-4e66-9aa9-aec8429c8885}">
@@ -149,6 +152,14 @@
 	<object class="SingleSound" id="{36ec0f69-2558-4e66-aad8-d4e768794cb9}">
 		<relationship name="audioFile">
 			<destination>{7f3379e2-0327-474a-ae6b-9b13dce37f1f}</destination>
+		</relationship>
+	</object>
+	<object class="PlayPercentage" id="{bd6ca933-132b-4f40-b923-1408d28b6586}">
+		<property name="percentage">
+			<value>20</value>
+		</property>
+		<relationship name="sound">
+			<destination>{f3be5528-e21c-4673-8a04-5b889a2e136a}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{b0018adc-9692-41e0-985c-957f0df6e10b}">
