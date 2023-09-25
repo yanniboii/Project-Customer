@@ -5912,11 +5912,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_EventPath:
     Guid:
-      Data1: 3777093
-      Data2: 1307841569
-      Data3: -190883188
-      Data4: 1376012403
-    Path: event:/Ambience
+      Data1: -796616566
+      Data2: 1090910626
+      Data3: -210254932
+      Data4: 1343321113
+    Path: event:/Footsteps
   m_Wood: 0
   m_Water: 0
   m_Dirt: 1
