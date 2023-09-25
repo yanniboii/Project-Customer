@@ -82,6 +82,8 @@ public class Footsteps : MonoBehaviour
 	Vector3 m_TrianglePoint0;
 	Vector3 m_TrianglePoint1;
 	Vector3 m_TrianglePoint2;
+	
+	private bool isJumping;
 
 	void Start()
 	{
@@ -113,6 +115,10 @@ public class Footsteps : MonoBehaviour
 			Debug.DrawLine(m_TrianglePoint1, m_TrianglePoint2);
 			Debug.DrawLine(m_TrianglePoint2, m_TrianglePoint0);
 		}
+
+
+		if (GetComponent<PlayerMovement>().grounded) isJumping = false;
+		else isJumping = true;
 	}
 
 
@@ -188,18 +194,22 @@ public class Footsteps : MonoBehaviour
 		if(m_Debug)
 			Debug.Log("Wood: " + m_Wood + " Dirt: " + m_Dirt + " Sand: " + m_Sand + " Water: " + m_Water);
 
-		//if(m_EventPath != null)
+
+		if (!isJumping)
 		{
-			FMOD.Studio.EventInstance e = FMODUnity.RuntimeManager.CreateInstance(m_EventPath);
-			e.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(transform.position));
+			//if(m_EventPath != null)
+			{
+				FMOD.Studio.EventInstance e = FMODUnity.RuntimeManager.CreateInstance(m_EventPath);
+				e.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(transform.position));
 
-			e.setParameterByName("Wood", m_Wood);
-			e.setParameterByName("Dirt", m_Dirt);
-			e.setParameterByName("Sand", m_Sand);
-			e.setParameterByName("Water", m_Water);
+				e.setParameterByName("Wood", m_Wood);
+				e.setParameterByName("Dirt", m_Dirt);
+				e.setParameterByName("Sand", m_Sand);
+				e.setParameterByName("Water", m_Water);
 
-			e.start();
-			e.release();//Release each event instance immediately, there are fire and forget, one-shot instances.
+				e.start();
+				e.release();//Release each event instance immediately, there are fire and forget, one-shot instances.
+			}
 		}
 	}
 
