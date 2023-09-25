@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{274063e7-4407-4e77-872e-44c5d2cece0c}">
+		<property name="assetPath">
+			<value>deerwalk2.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.71999999999999997</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2e3b7b9b-b1d9-44c4-96cf-029092ad46f4}</destination>
+		</relationship>
+	</object>
+</objects>

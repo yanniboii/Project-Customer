@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{8501fa6a-35bb-4409-a27b-d48f6cfee093}">
+		<property name="assetPath">
+			<value>deercall2.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.47020408163265304</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2e3b7b9b-b1d9-44c4-96cf-029092ad46f4}</destination>
+		</relationship>
+	</object>
+</objects>

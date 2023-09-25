@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e683057d-9a24-48b1-a32d-4f1ce0ef898d}">
+		<property name="assetPath">
+			<value>animalsniff.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.60081632653061223</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2e3b7b9b-b1d9-44c4-96cf-029092ad46f4}</destination>
+		</relationship>
+	</object>
+</objects>
