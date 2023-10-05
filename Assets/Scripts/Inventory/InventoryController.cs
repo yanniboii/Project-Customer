@@ -43,7 +43,7 @@ public class InventoryController : MonoBehaviour
         }
         else if (inventoryIsOpen == false)
         {
-            Cursor.lockState = CursorLockMode.Locked;
+            /*Cursor.lockState = CursorLockMode.Locked;
             //Cursor.visible = false;
             playerMovement.enabled = true;
             playerCam.enabled = true;
@@ -57,6 +57,7 @@ public class InventoryController : MonoBehaviour
                 playerMovement.enabled = true;
                 throwableSeeds.enabled = true;
                 getWater.enabled = true;
+                playerCam.enabled = true;
             }
             else
             {
@@ -65,6 +66,7 @@ public class InventoryController : MonoBehaviour
                 playerMovement.enabled = true;
                 throwableSeeds.enabled = false;
                 getWater.enabled = true;
+                playerCam.enabled = true;
             } 
         }
     }
