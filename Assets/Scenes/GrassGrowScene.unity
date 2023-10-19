@@ -3123,7 +3123,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  OverrideMaxDistance: 500
 --- !u!1 &866821493
 GameObject:
   m_ObjectHideFlags: 0
@@ -3955,21 +3955,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Crow
-      objectReference: {fileID: 0}
-    - target: {fileID: 976931105843903235, guid: d274a052358a2f8468d7baf6a27e26c6,
-        type: 3}
-      propertyPath: PlayEvent
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 976931105843903235, guid: d274a052358a2f8468d7baf6a27e26c6,
-        type: 3}
-      propertyPath: StopEvent
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 976931105843903235, guid: d274a052358a2f8468d7baf6a27e26c6,
-        type: 3}
-      propertyPath: OverrideAttenuation
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8872925194630667654, guid: d274a052358a2f8468d7baf6a27e26c6,
         type: 3}

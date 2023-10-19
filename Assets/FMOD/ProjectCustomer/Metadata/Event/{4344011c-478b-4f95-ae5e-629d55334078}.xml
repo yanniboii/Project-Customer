@@ -66,6 +66,9 @@
 		<property name="dopplerEnabled">
 			<value>true</value>
 		</property>
+		<property name="maximumDistance">
+			<value>500</value>
+		</property>
 	</object>
 	<object class="MarkerTrack" id="{840a29e7-0c47-41ce-a15c-a1c8c3853919}" />
 	<object class="GroupTrack" id="{faaf5a1b-09ea-4177-9ef2-0e9fe3951609}">
@@ -81,7 +84,7 @@
 			<destination>{54559d50-09c6-4961-b4c9-6549744736b6}</destination>
 		</relationship>
 		<relationship name="markers">
-			<destination>{4137e9df-81ec-45d5-bdc3-6fa64579f9fa}</destination>
+			<destination>{3c8b1a22-49db-4c51-8a57-594f0292e371}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{1664d440-85bf-4e28-8bc4-cbb9ee46f312}">
@@ -134,12 +137,12 @@
 			<destination>{1664d440-85bf-4e28-8bc4-cbb9ee46f312}</destination>
 		</relationship>
 	</object>
-	<object class="LoopRegion" id="{4137e9df-81ec-45d5-bdc3-6fa64579f9fa}">
+	<object class="LoopRegion" id="{3c8b1a22-49db-4c51-8a57-594f0292e371}">
 		<property name="position">
 			<value>0</value>
 		</property>
 		<property name="length">
-			<value>0.75</value>
+			<value>0.5</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{cf2ab6bf-ad05-4ebe-bcc9-4e013e79649d}</destination>
@@ -190,7 +193,17 @@
 	</object>
 	<object class="MixerBusPanner" id="{efa18995-accd-48b8-b6cc-f39f9a1bbd03}" />
 	<object class="MixerBusFader" id="{39035f4a-2e4a-4736-9857-4238d25703ef}" />
-	<object class="SpatialiserEffect" id="{eff2145b-eb8a-4605-9c63-cf988dfd4de2}" />
+	<object class="SpatialiserEffect" id="{eff2145b-eb8a-4605-9c63-cf988dfd4de2}">
+		<property name="distanceRolloffType">
+			<value>2</value>
+		</property>
+		<property name="maximumDistance">
+			<value>100</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="RandomizerModulator" id="{2a2ad2f8-eac2-4aff-bcf1-94b96353703f}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>pitch</value>
