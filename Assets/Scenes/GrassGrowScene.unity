@@ -382,6 +382,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crow
       objectReference: {fileID: 0}
+    - target: {fileID: 4408643547776925463, guid: 011d3bc744a4dc144a871b3a9d16fefe,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7410511232199600885, guid: 011d3bc744a4dc144a871b3a9d16fefe,
         type: 3}
       propertyPath: m_RootOrder
